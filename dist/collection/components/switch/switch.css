@@ -1,0 +1,61 @@
+:host .hc-switch {
+  width: 2rem;
+  height: 1rem;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius: 1rem;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  outline: none;
+}
+:host .hc-switch:before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: -1px;
+  left: 0;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+:host .hc-switch:checked {
+  border-color: #2170D9;
+  box-shadow: #2170D9 0 0 0 0.8rem inset;
+  background-color: #2170D9;
+}
+:host .hc-switch:checked:before {
+  left: 1rem;
+}
+:host .hc-switch.hc-switch-animbg {
+  transition: background-color ease 0.4s;
+}
+:host .hc-switch.hc-switch-animbg:before {
+  transition: left 0.3s;
+}
+:host .hc-switch.hc-switch-animbg:checked {
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  background-color: #2170D9;
+  transition: border-color 0.4s, background-color ease 0.4s;
+}
+:host .hc-switch.hc-switch-animbg:checked:before {
+  transition: left 0.3s;
+}
+:host .hc-switch.hc-switch-anim {
+  transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s;
+}
+:host .hc-switch.hc-switch-anim:before {
+  transition: left 0.3s;
+}
+:host .hc-switch.hc-switch-anim:checked {
+  box-shadow: #2170D9 0 0 0 0.8rem inset;
+  background-color: #2170D9;
+  transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
+}
+:host .hc-switch.hc-switch-anim:checked:before {
+  transition: left 0.3s;
+}

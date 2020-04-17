@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #262626;
+  padding: 0.8rem 0;
+  position: relative;
+}
+:host::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 1px;
+  background: #e6e6e6;
+  transform-origin: 0 100%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+:host .label {
+  display: flex;
+  flex-direction: column;
+  font-weight: normal;
+  font-size: inherit;
+  margin: 0;
+}
+:host .value {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #8c8c8c;
+  margin: 0;
+}
+:host .icon {
+  color: #e6e6e6;
+}
+
+:host([label-position=top]) {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+}
+:host([label-position=top]) .value {
+  margin-top: 0.3rem;
+}

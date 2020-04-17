@@ -1,0 +1,258 @@
+:host {
+  display: block;
+  color: inherit;
+}
+:host .hc-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 0 0.5rem;
+  height: 2.2rem;
+}
+:host .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e6e6e6;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+:host .hc-input.textarea {
+  height: auto;
+  padding-bottom: 1rem;
+  position: relative;
+}
+:host .hc-input.textarea textarea {
+  height: auto !important;
+  border: none;
+  margin: 0.5rem 0;
+}
+:host .hc-input.textarea .hc-input__notice {
+  position: absolute;
+  bottom: 0;
+  height: 1.7rem;
+  padding: 0 0.5rem;
+  right: 0;
+}
+:host .hc-input__count {
+  font-size: 0.7rem;
+  color: #e6e6e6;
+}
+:host .hc-input__notice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+:host .hc-input__clear {
+  color: #e6e6e6;
+  position: relative;
+  z-index: 100;
+  display: none;
+}
+:host .hc-input__prefix {
+  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #8c8c8c;
+}
+:host .hc-input__suffix {
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #8c8c8c;
+}
+:host .hc-input__core {
+  flex: 1;
+  outline: none;
+  font-size: 0.8rem;
+  height: 1rem;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  background: none;
+  margin: 0;
+  color: inherit;
+  z-index: 99;
+  caret-color: #2170D9;
+  font-family: inherit;
+}
+:host .hc-input__core::-webkit-input-placeholder {
+  color: #666;
+  line-height: normal;
+}
+
+:host([shape=conner]) .hc-input {
+  position: relative;
+}
+:host([shape=conner]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0.6rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e6e6e6;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+:host([shape=rounder]) .hc-input {
+  position: relative;
+}
+:host([shape=rounder]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 2.4rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e6e6e6;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+:host([shape=light]) .hc-input {
+  position: relative;
+  padding: 0;
+  height: auto;
+}
+:host([shape=light]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #fff;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+:host([shape=fill]) .hc-input {
+  position: relative;
+  background: #fafafb;
+}
+:host([shape=fill]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #fff;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+:host([shape=fill][error]) .hc-input {
+  position: relative;
+  background: rgba(233, 0, 0, 0.03);
+}
+:host([shape=fill][error]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(233, 0, 0, 0.3);
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+:host([shape=fill][error]) .hc-input__core {
+  caret-color: #e90000;
+}
+:host([shape=fill][error]) .hc-input__core::-webkit-input-placeholder {
+  color: rgba(233, 0, 0, 0.3);
+}
+
+:host([shape=line]) .hc-input {
+  position: relative;
+}
+:host([shape=line]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 1px;
+  background: #e6e6e6;
+  transform-origin: 0 100%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+:host([error]) .hc-input {
+  position: relative;
+}
+:host([error]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #e90000;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+:host([error]) .hc-input__core {
+  caret-color: #e90000;
+}
+:host([error]):after {
+  content: attr(error);
+  font-size: 0.7rem;
+  color: #e90000;
+}
+
+:host([warning]) .hc-input {
+  position: relative;
+}
+:host([warning]) .hc-input::after {
+  content: "";
+  box-sizing: border-box;
+  border-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 1px solid #E6A23C;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+:host([warning]) .hc-input__core {
+  caret-color: #E6A23C;
+}
+:host([warning]):after {
+  content: attr(warning);
+  font-size: 0.7rem;
+  color: #E6A23C;
+}
+
+:host([align=right]) .hc-input__core {
+  text-align: right;
+}

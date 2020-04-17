@@ -1,0 +1,31 @@
+import { EventEmitter } from '../../stencil.core';
+export declare class Picker {
+    value: string;
+    data: any;
+    itemHeight: number;
+    vis: number;
+    cancelLabel: string;
+    confirmLabel: string;
+    separate: string;
+    el: HTMLElement;
+    selected: any;
+    formatData: any;
+    key: any;
+    offset: any;
+    label: any[];
+    originData: any;
+    vchange: EventEmitter;
+    vclick: EventEmitter;
+    componentWillLoad(): void;
+    componentDidLoad(): void;
+    bindTouch(): void;
+    parseIndexToY(index: any): number;
+    parseYToIndex(y: any): number;
+    parseData(label: any): void;
+    isCascade(data: any): boolean;
+    _typeof(obj: any): any;
+    isPlainObject(obj: any): boolean;
+    onClick(type: any): void;
+    render(): any;
+    init(option: any): Promise<HTMLHcPickerElement>;
+}

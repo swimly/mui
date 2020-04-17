@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+:host:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+  transform: scaleY(0.5);
+}
+:host .tab {
+  flex: 1;
+  overflow: hidden;
+}
+:host .tab .indicate {
+  position: absolute;
+  display: inline-block;
+  width: 1em;
+  height: 2px;
+  background: #2170D9;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+  z-index: 10;
+  transition: 0.3s;
+}
+:host .tab-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  flex: 1;
+}
+:host .tab-wrap span {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  height: 2.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem;
+}
+:host .tab-wrap span.active {
+  color: #2170D9;
+}
+:host .more slot {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+:host .more.show .more-content {
+  display: block;
+}
+:host .more-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.4rem;
+  background: #fff;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  z-index: 10;
+  display: none;
+  z-index: 9;
+}
+:host .more-content li {
+  display: inline-block;
+  width: 33.33%;
+  padding: 0.2rem;
+  box-sizing: border-box;
+}
+:host .more-content li span {
+  display: inline-block;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem;
+  border-radius: 0.2rem;
+}
+:host .more-content li span.active {
+  background: #2170D9;
+  border-color: #2170D9;
+  color: #fff;
+}

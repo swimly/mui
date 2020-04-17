@@ -1,0 +1,43 @@
+:host {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.7rem;
+  background-color: #262626;
+  color: #fff;
+  height: 1.6rem;
+  padding: 0 1rem;
+  border-radius: 0.3rem;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: -1;
+}
+
+:host([visible]) {
+  opacity: 1;
+  top: 50%;
+  z-index: 100;
+}
+
+:host([position=top]) {
+  top: 15%;
+}
+
+:host([position=top][visible]) {
+  top: 10%;
+  z-index: 100;
+  opacity: 1;
+}
+
+:host([position=bottom]) {
+  top: 95%;
+}
+
+:host([position=bottom][visible]) {
+  top: 90%;
+  z-index: 100;
+  opacity: 1;
+}

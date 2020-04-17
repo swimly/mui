@@ -1,0 +1,179 @@
+:host {
+  display: block;
+  overflow: hidden;
+}
+:host .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+:host .head .left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+:host .head .year,
+:host .head .month {
+  font-size: 1rem;
+}
+:host .head .diff {
+  font-size: 0.6rem;
+  background: #eee;
+  color: #262626;
+  padding: 0.2rem 0.4rem;
+  margin: 0 0.5rem 0 0.2rem;
+  display: inline-block;
+  border-radius: 1rem;
+  width: 4em;
+  text-align: center;
+}
+:host .head .circle {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid #2170D9;
+  color: #2170D9;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  background: none;
+}
+:host .weeks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.7rem;
+  color: #999;
+  position: relative;
+}
+:host .weeks:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  background: #e6e6e6;
+  transform: scaleY(0.5);
+}
+:host .weeks li {
+  flex: 1;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+:host .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0.5rem 0;
+}
+:host .content .month {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 14rem;
+  position: relative;
+}
+:host .content .month:after {
+  content: attr(month);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #eee;
+}
+:host .content .month .week {
+  flex: 1;
+  position: relative;
+  z-index: 9;
+}
+:host .content .week {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+}
+:host .content .week .day {
+  flex: 1;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  position: relative;
+}
+:host .content .week .day.selected {
+  background: #eee;
+}
+:host .content .week .day.selected:before {
+  display: none !important;
+}
+:host .content .week .day.active.next:before {
+  display: none;
+}
+:host .content .week .day.active.prev:before {
+  display: none;
+}
+:host .content .week .day.active h2, :host .content .week .day.active p {
+  color: #2170D9;
+}
+:host .content .week .day.active:before {
+  content: "";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid #2170D9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+:host .content .week .day.active.current h2, :host .content .week .day.active.current p {
+  color: #fff;
+}
+:host .content .week .day.active.current:before {
+  background-color: #2170D9;
+}
+:host .content .week .day.active.current.selected h2, :host .content .week .day.active.current.selected p {
+  color: #262626;
+}
+:host .content .week .day p {
+  margin: 0;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 10;
+  color: #262626;
+  line-height: 1;
+}
+:host .content .week .day h2 {
+  font-size: 0.5rem;
+  font-weight: normal;
+  color: #8c8c8c;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+}
+:host .content .week .day.prev p, :host .content .week .day.next p {
+  color: #e6e6e6;
+}
+:host .content .week .day.prev h2, :host .content .week .day.next h2 {
+  color: #e6e6e6;
+}
+
+:host([type=week]) .content .month {
+  height: auto;
+}

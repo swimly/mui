@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  flex: 1;
+}
+:host .head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.4rem;
+  background: #fff;
+}
+:host .head .label {
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: #262626;
+  margin: 0;
+}
+:host .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.4rem;
+  background: #fff;
+}

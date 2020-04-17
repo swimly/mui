@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+:host .item .handle .title {
+  font-size: 0.8rem;
+  color: #262626;
+  font-weight: normal;
+  display: flex;
+  margin: 0;
+  flex-direction: row;
+  position: relative;
+  padding: 0.5rem 0;
+}
+:host .item .handle .title:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+  bottom: 0;
+  transform: scaleY(0.5);
+}
+:host .item .handle .title .label {
+  flex: 1;
+}
+:host .item .handle .title .indicate {
+  transition: 0.3s;
+  color: #e6e6e6;
+}
+:host .item.active .handle .title .indicate {
+  transform: rotate(90deg);
+}
+:host .item .content {
+  overflow: hidden;
+}
+:host .item .content .slot {
+  display: block;
+}

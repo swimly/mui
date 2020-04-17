@@ -1,0 +1,81 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+:host slot {
+  flex: 1;
+  height: 100%;
+  display: block;
+  overflow: auto;
+  background: #fff;
+  padding: 0 1rem;
+}
+:host slot hc-indexlist-letter {
+  background: #e6e6e6;
+}
+:host .indicate {
+  position: fixed;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  right: 3.5rem;
+  background: #e6e6e6;
+  margin-top: 0.3rem;
+  transform: rotate(45deg) translateY(-50%);
+  border-radius: 80% 0 55% 50%/55% 0 80% 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+:host .indicate.show {
+  opacity: 1;
+}
+:host .indicate span {
+  transform: rotate(-45deg);
+}
+:host .letters {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+:host .letters span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  color: #8c8c8c;
+  width: 1.2rem;
+  transition: 0.2s;
+  height: 1.2rem;
+  position: relative;
+}
+:host .letters span .pop {
+  position: absolute;
+  background: #e6e6e6;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  transform: translateX(-100%);
+  top: 50%;
+  margin-top: -1rem;
+  border-radius: 1rem 3rem 3rem 1rem;
+  display: none;
+}
+:host .letters span.prev, :host .letters span.next {
+  transform: translateX(-0.5rem);
+}
+:host .letters span.current {
+  transform: translateX(-1rem);
+  color: #2170D9;
+}
