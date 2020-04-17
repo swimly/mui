@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>折叠面板</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    .panel{
+      font-size:0.7rem;
+      line-height:1.8;
+    }
+  </style>
+</head>
+<body>
+  <hc-page titles="折叠面板">
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-collapse>
+        <hc-collapse-item titles="标题一">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item titles="标题二">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item titles="标题三">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+      </hc-collapse>
+    </div>
+    <div class="panel">
+      <h2>手风琴</h2>
+      <hc-collapse accordion="true">
+        <hc-collapse-item titles="标题一">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item titles="标题二">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item titles="标题三">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+      </hc-collapse>
+    </div>
+    <div class="panel">
+      <h2>设置name</h2>
+      <hc-collapse>
+        <hc-collapse-item name="a" titles="标题一">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="b" titles="标题二">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="c" titles="标题三">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+      </hc-collapse>
+    </div>
+    <div class="panel">
+      <h2>默认展开一个</h2>
+      <hc-collapse open="a">
+        <hc-collapse-item name="a" titles="标题一">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="b" titles="标题二">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="c" titles="标题三">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+      </hc-collapse>
+    </div>
+    <div class="panel">
+      <h2>默认展开多个</h2>
+      <hc-collapse open="a,c">
+        <hc-collapse-item name="a" titles="标题一">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="b" titles="标题二">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+        <hc-collapse-item name="c" titles="标题三">通过accordion可以设置为手风琴模式，最多展开一个面板，此时activeName为字符串格式</hc-collapse-item>
+      </hc-collapse>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

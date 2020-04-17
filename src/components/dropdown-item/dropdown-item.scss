@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  flex:1;
+  .head{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    height:2.4rem;
+    background:#fff;
+    .label{
+      font-weight: normal;
+      font-size:$h5;
+      color:$black;
+      margin:0;
+    }
+  }
+  .content{
+    position: absolute;
+    left:0;
+    right:0;
+    top:2.4rem;
+    background:#fff;
+  }
+}

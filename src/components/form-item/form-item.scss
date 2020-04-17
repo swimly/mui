@@ -1,0 +1,34 @@
+:host {
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  font-size:0.8rem;
+  color:$black;
+  padding:0.8rem 0;
+  @include border_1px('bottom', $lightgray, 0);
+  .label{
+    display:flex;
+    flex-direction:column;
+    font-weight:normal;
+    font-size:inherit;
+    margin:0;
+  }
+  .value{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    color:$normal;
+    margin:0;
+  }
+  .icon{
+    color:$lightgray;
+  }
+}
+:host([label-position="top"]){
+  flex-direction: column;
+  align-items:flex-start;
+  padding:0.5rem 0;
+  .value{
+    margin-top:0.3rem;
+  }
+}

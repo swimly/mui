@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>切换</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="切换">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-tab data="[{label: '全部'},{label: '已读'},{label: '未读'}]"></hc-tab>
+    </div>
+    <div class="panel">
+      <h2>弹出更多</h2>
+      <p>超出点击会整体移动</p>
+      <hc-tab show-more="true" data="[{label: '前端'},{label: '后端'},{label: 'Android'},{label: 'iOS'},{label: '人工智能'},{label: '开发工具'},{label: '代码人生'},{label: '阅读'}]"></hc-tab>
+    </div>
+    <div class="panel">
+      <h2>两端对齐</h2>
+      <p>相对个数比较少的情况使用</p>
+      <hc-tab align="space-around" data="[{label: '全部'},{label: '已读'},{label: '未读'}]"></hc-tab>
+    </div>
+    <div class="panel">
+      <h2>个数很多</h2>
+      <p>超出点击会整体移动</p>
+      <hc-tab data="[{label: '前端'},{label: '后端'},{label: 'Android'},{label: 'iOS'},{label: '人工智能'},{label: '开发工具'},{label: '代码人生'},{label: '阅读'}]"></hc-tab>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

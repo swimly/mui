@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="按钮">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-button>按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同主题</h2>
+      <p>按钮根据颜色可分为primary，danger，default，默认是default。</p>
+      <hc-button type="primary">按钮</hc-button>
+      <hc-button type="danger">按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同形状</h2>
+      <p>按钮根据弧度来分可分为 conner，rounder, default,默认是default，没有弧度！</p>
+      <hc-button shape="conner">按钮</hc-button>
+      <hc-button shape="rounder">按钮</hc-button>
+      <hc-button type="primary" shape="conner">按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>朴素按钮</h2>
+      <p>颜色比正常按钮要浅，plain，记住一定要加type才有效果！</p>
+      <hc-button type="primary" plain>按钮</hc-button>
+      <hc-button type="primary" shape="conner" plain>按钮</hc-button>
+      <hc-button type="primary" shape="rounder" plain>按钮</hc-button>
+      <hc-button type="danger" plain>按钮</hc-button>
+      <hc-button type="danger" shape="conner" plain>按钮</hc-button>
+      <hc-button type="danger" shape="rounder" plain>按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>线条按钮</h2>
+      <p>颜色比正常按钮要浅，plain，记住一定要加type才有效果！</p>
+      <hc-button type="primary" outline>按钮</hc-button>
+      <hc-button type="primary" shape="conner" outline>按钮</hc-button>
+      <hc-button type="primary" shape="rounder" outline>按钮</hc-button>
+      <hc-button type="danger" outline>按钮</hc-button>
+      <hc-button type="danger" shape="conner" outline>按钮</hc-button>
+      <hc-button type="danger" shape="rounder" outline>按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同尺寸</h2>
+      <p>为了适应不同环境，button有mini,small,default,large几种尺寸。</p>
+      <hc-button size="mini" shape="conner">按钮</hc-button>
+      <hc-button size="small" shape="conner">按钮</hc-button>
+      <hc-button size="large" shape="conner">按钮</hc-button>
+      <hc-button type="primary" shape="conner" size="small" plain>按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>带图标的按钮</h2>
+      <hc-button icon="collection">收藏</hc-button>
+      <hc-button icon="collection" type="primary">收藏</hc-button>
+      <hc-button icon="collection" type="primary" size="small">收藏</hc-button>
+      <hc-button icon="collection" type="primary" size="small" plain>收藏</hc-button>
+    </div>
+    <div class="panel">
+      <h2>自定义颜色的按钮</h2>
+      <p>注意：自定义颜色的按钮没有plain和outline样式</p>
+      <hc-button color="#f00">收藏</hc-button>
+      <hc-button color="#ccc" shape="conner">收藏</hc-button>
+      <hc-button color="#333" size="small">收藏</hc-button>
+    </div>
+    <div class="panel">
+      <h2>按钮的加载状态</h2>
+      <hc-button id="loading" type="primary">按钮</hc-button>
+    </div>
+    <div class="panel">
+      <h2>禁用按钮</h2>
+      <hc-button disabled="true">按钮</hc-button>
+      <hc-button  disabled="true" type="primary">按钮</hc-button>
+      <hc-button  disabled="true" type="danger">按钮</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script>
+    let loading = document.querySelector('#loading')
+    loading.addEventListener('click', e => {
+      loading.loading()
+      setTimeout(() => {
+        loading.finishloading()
+      }, 3000)
+    })
+  </script>
+</body>
+</html>

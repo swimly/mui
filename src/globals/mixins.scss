@@ -1,0 +1,48 @@
+@mixin border_1px($type: default, $color: transparent, $radius: 1rem) {
+  position: relative;
+  &::after {
+    content: "";
+    box-sizing: border-box;
+    border-radius:$radius;
+    position: absolute;
+    @if $type == default {
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      border: 1px solid $color;
+    } @else if $type == top {
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+      background: $color;
+    } @else if $type == bottom {
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+      background: $color;
+      transform-origin: 0 100%;
+    } @else if $type == left {
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 200%;
+      background: $color;
+    } @else if $type == right {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 200%;
+      background: $color;
+    }
+    transform: scale(0.5);
+    transform-origin: 0 0;
+  }
+}
+
+@mixin buttonRadius ($radius, $color) {
+  border-radius:$radius;
+  @include border_1px('default', $color, $radius * 2);
+}

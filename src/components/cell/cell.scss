@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  font-size:0.8rem;
+  padding:0.7rem 0;
+  position: relative;
+  &:after{
+    content:"";
+    display:inline-block;
+    width:100%;
+    height:1px;
+    position: absolute;
+    bottom:0;
+    left:0;
+    background:$lightgray;
+    transform: scaleY(0.5);
+  }
+  *{
+    margin:0;
+    font-weight: normal;
+    font-size:inherit;
+    color:inherit;
+  }
+  .label{
+    flex:1;
+    color:$black;
+    h2{
+
+    }
+    p{
+      font-size:$h6;
+      color:$normal;
+    }
+  }
+  .value{
+    text-align:right;
+    color:$gray;
+  }
+}
+:host([middle]) {
+  align-items:center;
+}

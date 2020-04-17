@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+:host .hc-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+:host .hc-input__core {
+  flex: 1;
+  outline: none;
+}

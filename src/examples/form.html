@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    hc-input{
+      margin:0;
+    }
+  </style>
+</head>
+<body>
+  <hc-page titles="表单">
+    <div class="panel">
+      <h2>普通表单</h2>
+      <hc-form label-width="5em">
+        <hc-form-item label="姓名" value="刘勇"></hc-form-item>
+        <hc-form-item label="手机号码">18827078587</hc-form-item>
+      </hc-form>
+    </div>
+    <div class="panel">
+      <h2>垂直布局</h2>
+      <hc-form label-position="top">
+        <hc-form-item label="姓名" value="刘勇"></hc-form-item>
+        <hc-form-item label="手机号码">18827078587</hc-form-item>
+      </hc-form>
+    </div>
+    <div class="panel">
+      <h2>右对齐</h2>
+      <hc-form align="right">
+        <hc-form-item label="姓名" value="刘勇"></hc-form-item>
+        <hc-form-item label="手机号码">18827078587</hc-form-item>
+      </hc-form>
+    </div>
+    <div class="panel">
+      <h2>嵌入表单元素</h2>
+      <hc-form align="right">
+        <hc-form-item label="姓名">
+          <hc-input align="right" shape="light" value="刘勇"></hc-input>
+        </hc-form-item>
+        <hc-form-item label="手机号码">
+          <hc-input align="right" shape="light" value="18827078587"></hc-input>
+        </hc-form-item>
+        <hc-form-item label="出生日期" suffix-icon="clock" suffix-color="#2170D9">
+          <hc-input align="right" shape="light" value="刘勇"></hc-input>
+        </hc-form-item>
+        <hc-form-item label="是否武汉籍">
+          <hc-switch value="true"></hc-switch>
+        </hc-form-item>
+        <hc-form-item label="性别">
+          <hc-radio-group>
+            <hc-radio shape="circle" value="0">男</hc-radio>
+            <hc-radio shape="circle" value="1">女</hc-radio>
+          </hc-radio-group>
+        </hc-form-item>
+      </hc-form>
+    </div>
+    <div class="panel">
+      <h2>模拟list</h2>
+      <hc-form>
+        <hc-form-item label="个人中心" suffix-icon="arrow-right" suffix-size=24""></hc-form-item>
+      </hc-form>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

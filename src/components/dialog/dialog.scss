@@ -1,0 +1,133 @@
+:host {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  .hc-dialog{
+    background:#fff;
+    position: relative;
+    z-index:199;
+    border-radius:$radius;
+    width:80%;
+    max-width:17rem;
+    padding:1rem;
+    box-sizing: border-box;
+    transform: translate(0, 50%);
+    opacity:0;
+    transition:0.3s;
+    &__countdown{
+      font-size:$h6;
+      color:$normal;
+      margin:0;
+      position: absolute;
+      right:1rem;
+      top:1rem;
+    }
+    &__title{
+      font-size:$h3;
+      font-weight:normal;
+      color:$black;
+      margin:0;
+      text-align:center;
+      &:not(:empty){
+        margin-bottom:1rem;
+      }
+    }
+    &__content{
+      font-size:$h5;
+      color:$black;
+    }
+    &__footer{
+      display:flex;
+      flex-direction: row;
+      @include border_1px('top', $lightgray, 0);
+      margin:0 -1rem -1rem -1rem;
+      &:not(:empty){
+        margin-top:1rem;
+      }
+      &_item{
+        flex:1;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content: center;
+        font-size:$h4;
+        margin:0;
+        height:2.4rem;
+        &:not(:first-child){
+          @include border_1px('left', $lightgray, 0);
+          color:$black;
+        }
+        &:last-child{
+          color:$primary;
+        }
+      }
+    }
+  }
+  .hc-mask{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:100;
+    background-color:rgba(0,0,0,0.6);
+    opacity:0;
+    transition:0.3s;
+    z-index:-1;
+  }
+}
+// zoom
+:host([effect="zoom"]){
+  .hc-dialog{
+    transform: translate(0,0) scale(0.1);
+    opacity:0;
+  }
+}
+:host([effect="slidedown"]){
+  .hc-dialog{
+    transform: translate(0,-100%);
+    opacity:0;
+  }
+}
+:host([effect="slideup"]){
+  .hc-dialog{
+    transform: translate(0,100%);
+    opacity:0;
+  }
+}
+:host([effect="zoomdown"]){
+  .hc-dialog{
+    transform: translate(0,-200%) scale(0.1);
+    opacity:0;
+  }
+}
+:host([effect="zoomup"]){
+  .hc-dialog{
+    transform: translate(0,200%) scale(0.1);
+    opacity:0;
+  }
+}
+:host([effect="fade"]){
+  .hc-dialog{
+    transform: translate(0,0);
+    opacity:0;
+  }
+}
+:host([visible]){
+  z-index:100;
+  .hc-dialog{
+    transform: translate(0, 0);
+    opacity:1;
+  }
+  .hc-mask{
+    opacity:1;
+    z-index:100;
+    transition:0.2s;
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>textfield</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="弹出单选">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-actionsheet id="normal" titles="出生地"></hc-actionsheet>
+    </div>
+    <div class="panel">
+      <h2>指令调用</h2>
+      <hc-button id="zl">指令</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_actionsheet } from '../../www/build/hc-actionsheet.entry.js'
+    const actionsheet = new hc_actionsheet({})
+    window.actionsheet = actionsheet
+  </script>
+  <script>
+    const normal = document.querySelector('#normal')
+    normal.content = `['湖北省', '湖南省', '广东省', '广西省', '福建省', '四川省']`
+    const zl = document.querySelector('#zl')
+    zl.addEventListener('click', () => {
+      actionsheet.init({
+        titles: '哈哈哈',
+        content: `['支付宝', '微信', '银联', '支付宝1', '微信2', '银联3', '支付宝45', '微信5', '银联6']`,
+        buttons: `['取消', '确定']`
+      }).then(res => {
+        res.addEventListener('vclick', (e) => {
+          console.log(e.detail.value)
+        })
+      })
+    })
+  </script>
+</body>
+</html>

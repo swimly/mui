@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keyboard</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    .panel p{
+      font-size:1rem;
+      color:brown;
+    }
+  </style>
+</head>
+<body>
+  <hc-page titles="安全键盘">
+    <div class="panel">
+      <h2>默认键盘</h2>
+      <hc-keyboard rel="p1"></hc-keyboard>
+      <p id="p1"></p>
+    </div>
+    <div class="panel">
+      <h2>大写键盘</h2>
+      <hc-keyboard type="uppercase" rel="p2"></hc-keyboard>
+      <p id="p2"></p>
+    </div>
+    <div class="panel">
+      <h2>数字键盘</h2>
+      <hc-keyboard type="number" rel="p3"></hc-keyboard>
+      <p id="p3"></p>
+    </div>
+    <div class="panel">
+      <h2>符号键盘</h2>
+      <hc-keyboard type="symbol" rel="p4"></hc-keyboard>
+      <p id="p4"></p>
+    </div>
+    <div class="panel">
+      <h2>点击有震动反馈（支持android）</h2>
+      <hc-keyboard vibrate="40" rel="p5"></hc-keyboard>
+      <p id="p5"></p>
+    </div>
+    <div class="panel">
+      <h2>点击有悬浮提示</h2>
+      <hc-keyboard tooltip="true" rel="p6"></hc-keyboard>
+      <p id="p6"></p>
+    </div>
+    <div class="panel">
+      <h2>指令形式</h2>
+      <hc-button>弹出键盘</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_keyboard } from '../../www/build/hc-keyboard.entry.js'
+      const keyboard = new hc_keyboard({})
+      window.keyboard = keyboard
+  </script>
+  <script>
+    var keyboards = document.querySelectorAll('hc-keyboard')
+    keyboards.forEach(keyboard => {
+      keyboard.addEventListener('vchange', e => {
+        const id = '#' + keyboard.getAttribute('rel')
+        const result = document.querySelector(id)
+        result.innerHTML = e.detail
+      })
+    })
+    document.querySelector('hc-button').addEventListener('click', () => {
+      keyboard.init({
+        vibrate: 40
+      })
+    })
+  </script>
+</body>
+</html>

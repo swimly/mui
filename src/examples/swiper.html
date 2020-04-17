@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    hc-swiper-item{
+      background:#2170D9;
+      display:flex;
+      flex-direction: row;
+      align-items:center;
+      justify-content: center;
+      color:#fff;
+      font-size:1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <hc-page titles="轮播图">
+    <div class="panel">
+      <h2>自动滚动</h2>
+      <p>水平无缝自动滚动</p>
+      <hc-swiper autoplay="true" loop="true" current="1">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+      <p>水平自动滚动</p>
+      <hc-swiper autoplay="true" current="1">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+      <p>垂直无缝自动滚动</p>
+      <hc-swiper autoplay="true" loop="true" current="1" direction="vertical">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+      <p>垂直自动滚动</p>
+      <hc-swiper autoplay="true" current="1" direction="vertical">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+    </div>
+    <div class="panel">
+      <h2>水平无缝切换</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-swiper loop="true" current="1">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+    </div>
+    <div class="panel">
+      <h2>默认水平切换</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-swiper>
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+    </div>
+    <div class="panel">
+      <h2>垂直切换</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-swiper direction="vertical" current="1">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+    </div>
+    <div class="panel">
+      <h2>垂直无缝切换</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-swiper direction="vertical" loop="true">
+        <hc-swiper-item>1</hc-swiper-item>
+        <hc-swiper-item>2</hc-swiper-item>
+        <hc-swiper-item>3</hc-swiper-item>
+      </hc-swiper>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>吐司</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <hc-page titles="吐司">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-button type="primary" size="small" id="l1">弹出</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同位置</h2>
+      <hc-button type="primary" size="small" id="l2">顶部</hc-button>
+      <hc-button type="primary" size="small" id="l3">底部</hc-button>
+    </div>
+    <div class="panel">
+      <h2>自定义颜色</h2>
+      <hc-button type="primary" size="small" id="l4">弹出</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_toast } from '../../www/build/hc-toast.entry.js'
+    const toast = new hc_toast({})
+    window.toast = toast
+  </script>
+  <script>
+    document.querySelector('#l1').addEventListener('click', () => {
+      toast.init({
+        text: '提示信息',
+        duration: 3000
+      })
+    })
+    document.querySelector('#l2').addEventListener('click', () => {
+      toast.init({
+        text: '提示信息',
+        duration: 3000,
+        position: 'top'
+      })
+    })
+    document.querySelector('#l3').addEventListener('click', () => {
+      toast.init({
+        text: '提示信息',
+        duration: 3000,
+        position: 'bottom'
+      })
+    })
+    document.querySelector('#l4').addEventListener('click', () => {
+      toast.init({
+        text: '提示信息',
+        duration: 3000,
+        position: 'bottom',
+        background: '#2170D9'
+      })
+    })
+  </script>
+</body>
+
+</html>

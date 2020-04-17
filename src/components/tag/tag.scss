@@ -1,0 +1,59 @@
+:host {
+  display: inline-flex;
+  font-size:$h6;
+  @include border_1px('default', $lightgray, 0.5rem);
+  height:1.4rem;
+  align-items: center;
+  padding:0 0.8rem;
+  border-radius:0.2rem;
+  background-color: $white;
+  color:$black;
+  box-sizing: border-box;
+}
+:host([color]){
+  @include border_1px('default', transparent, 0.5rem);
+}
+:host([type]){
+  color:$white;
+  @include border_1px('default', transparent, 0.5rem);
+}
+:host([type="primary"]){
+  background-color:$primary;
+}
+:host([type="primary"][shape="plain"]){
+  background-color:rgba($primary, 0.1);
+  @include border_1px('default', $primary, 0.5rem);
+  color:$primary;
+}
+:host([type="primary"][shape="outline"]){
+  @include border_1px('default', $primary, 0.5rem);
+  color:$primary;
+  background-color:$white;
+}
+:host([type="primary"][shape="light"]){
+  @include border_1px('default', $lightgray, 0.5rem);
+  color:$primary;
+  background-color:$white;
+}
+:host([type="danger"]){
+  background-color:$danger;
+}
+:host([type="danger"][shape="plain"]){
+  background-color:rgba($danger, 0.1);
+  @include border_1px('default', $danger, 0.5rem);
+  color:$danger;
+}
+:host([type="danger"][shape="outline"]){
+  @include border_1px('default', $danger, 0.5rem);
+  color:$danger;
+  background-color:$white;
+}
+:host([type="danger"][shape="light"]){
+  @include border_1px('default', $lightgray, 0.5rem);
+  color:$danger;
+  background-color:$white;
+}
+:host([shape="rounder"]){
+  @include border_1px('default', transparent, 3rem);
+  border-radius:1.5rem;
+}

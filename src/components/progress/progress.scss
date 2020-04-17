@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  #svgContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+  }
+  #svgContainer > svg {
+    position: absolute;
+  }
+  circle {
+    -webkit-transition: stroke-dasharray .25s;
+    transition: stroke-dasharray .25s;
+  }
+}

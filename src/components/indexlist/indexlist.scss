@@ -1,0 +1,82 @@
+:host {
+  display: block;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+  position: relative;
+  slot{
+    flex:1;
+    height:100%;
+    display:block;
+    overflow:auto;
+    background:$white;
+    padding:0 1rem;
+    hc-indexlist-letter{
+      background:$lightgray;
+    }
+  }
+  .indicate{
+    position: fixed;
+    top:0;
+    width:2rem;
+    height:2rem;
+    right:3.5rem;
+    background:$lightgray;
+    margin-top:0.3rem;
+    transform: rotate(45deg) translateY(-50%);
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    opacity:0;
+    &.show{
+      opacity:1;
+    }
+    span{
+      transform: rotate(-45deg);
+    }
+  }
+  .letters{
+    display:flex;
+    flex-direction:column;
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    justify-content: space-around;
+    padding:1rem 0;
+
+    span{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content: center;
+      font-size:0.6rem;
+      color:$normal;
+      width:1.2rem;
+      transition:0.2s;
+      height:1.2rem;
+      position:relative;
+      .pop{
+        position: absolute;
+        background:$lightgray;
+        display:inline-block;
+        width:2rem;
+        height:2rem;
+        transform:translateX(-100%);
+        top:50%;
+        margin-top:-1rem;
+        border-radius:1rem 3rem 3rem 1rem;
+        display:none;
+      }
+      &.prev,&.next{
+        transform: translateX(-0.5rem);
+      }
+      &.current{
+        transform:translateX(-1rem);
+        color:$primary;
+      }
+    }
+  }
+}

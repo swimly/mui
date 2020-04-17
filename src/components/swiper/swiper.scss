@@ -1,0 +1,55 @@
+:host {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  .wrap{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    slot{
+      display:flex;
+      flex-direction: row;
+      align-items:center;
+      flex-wrap: nowrap;
+    }
+  }
+  .indicate{
+    position: absolute;
+    left:0;
+    width:100%;
+    bottom:0;
+    z-index:10;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    padding:0.5rem;
+    span{
+      display:inline-block;
+      width:0.3rem;
+      height:0.3rem;
+      background:rgba(255,255,255,0.4);
+      border-radius:50%;
+      margin:0 0.3rem;
+      font-size:0;
+      &.active{
+        background:#fff;
+      }
+    }
+  }
+}
+:host([direction="vertical"]) {
+  .wrap{
+    flex-direction: column;
+  }
+  .indicate{
+    width:auto;
+    top:0;
+    left:auto;
+    right:0;
+    flex-direction: column;
+    span{
+      margin:0.3rem 0;
+    }
+  }
+}

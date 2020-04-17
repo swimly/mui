@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  position: relative;
+}
+:host .core {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  opacity: 0;
+}
+:host .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+:host .error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}

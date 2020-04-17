@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+:host .hc-drawer {
+  position: fixed;
+  min-height: 30%;
+  min-width: 60%;
+  background: #fff;
+  z-index: 101;
+}
+:host .hc-mask {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.3s;
+}
+:host([visible="true"]) .hc-mask {
+  opacity: 1;
+  z-index: 100;
+}
+:host([transparent]) .hc-drawer {
+  background: transparent;
+}
+:host([direction="ttb"]) .hc-drawer {
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  width: 100%;
+  transform: translate(0, -100%);
+}
+:host([direction="ttb"][round="true"]) .hc-drawer {
+  border-radius: 0 0 1rem 1rem;
+}
+:host([direction="btt"]) .hc-drawer {
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  width: 100%;
+  transform: translate(0, 100%);
+}
+:host([direction="btt"][round="true"]) .hc-drawer {
+  border-radius: 1rem 1rem 0 0;
+}
+:host([direction="ltr"]) .hc-drawer {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  transform: translate(-100%, 0);
+}
+:host([direction="rtl"]) .hc-drawer {
+  top: 0;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 0);
+}
+:host([visible="true"]) .hc-drawer {
+  transform: translate(0, 0);
+}

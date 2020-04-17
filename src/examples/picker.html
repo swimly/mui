@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滑动选择</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="滑动选择">
+    <div class="panel">
+      <h2>一级联动</h2>
+      <hc-picker data="[{label: '前端开发'}, {label: '设计'}, {label: '后端开发'},{label: '实施'}]" value="后端开发"></hc-picker>
+    </div>
+    <div class="panel">
+      <h2>多级联动</h2>
+      <hc-picker separate="-" id="address" value="湖北省,武汉市,江夏区"></hc-picker>
+      <p id="a1"></p>
+    </div>
+    <div class="panel">
+      <h2>指令调用</h2>
+      <hc-button id="select">选择地区</hc-button>
+      <p id="a1"></p>
+    </div>
+  </hc-page>
+  <script src="data/china.js"></script>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_picker } from '../../www/build/hc-picker.entry.js'
+    const picker = new hc_picker({})
+    window.picker = picker
+  </script>
+  <script>
+    var ads = document.querySelector('#address')
+    ads.data = China
+    ads.addEventListener('vChange', (data) => {
+      document.querySelector('#a1').innerHTML = data.detail.label
+    })
+    const zl = document.querySelector('#select')
+    zl.addEventListener('click', () => {
+      picker.init({
+        data: `[{label: '前端开发'}, {label: '设计'}, {label: '后端开发'},{label: '实施'}]`,
+        value: ''
+      }).then(res => {
+        res.addEventListener('vclick', (e) => {
+          console.log(e.detail.value)
+        })
+      })
+    })
+  </script>
+</body>
+</html>

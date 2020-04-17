@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滑块</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="滑块">
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-slider></hc-slider>
+    </div>
+    <div class="panel">
+      <h2>初始值</h2>
+      <hc-slider value="30"></hc-slider>
+    </div>
+    <div class="panel">
+      <h2>自定义最大值，最小值</h2>
+      <hc-slider min="10" max="50"></hc-slider>
+    </div>
+    <div class="panel">
+      <h2>指定步长</h2>
+      <hc-slider min="10" max="50" step="5"></hc-slider>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script>
+    var sliders = document.querySelectorAll('hc-slider')
+    sliders.forEach((slider) => {
+      slider.addEventListener('vchange', (data) => {
+        console.log(data.detail)
+      })
+    })
+  </script>
+</body>
+</html>

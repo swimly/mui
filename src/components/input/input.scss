@@ -1,0 +1,150 @@
+:host {
+  display:block;
+  color:inherit;
+  .hc-input{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    @include border_1px('default', $lightgray, 0);
+    padding:0 0.5rem;
+    height:2.2rem;
+    &.textarea{
+      height:auto;
+      padding-bottom:1rem;
+      position:relative;
+      textarea{
+        height:auto !important;
+        border:none;
+        margin:0.5rem 0;
+      }
+      .hc-input__notice{
+        position: absolute;
+        bottom:0;
+        height:1.7rem;
+        padding:0 0.5rem;
+        right:0;
+      }
+    }
+    &__count{
+      font-size:$h6;
+      color:$lightgray;
+    }
+    &__notice{
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__clear{
+      color:$lightgray;
+      position: relative;
+      z-index:100;
+      display:none;
+    }
+    &__prefix{
+      margin-right:0.5rem;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      color:$normal;
+    }
+    &__suffix{
+      margin-left:0.5rem;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      color:$normal;
+    }
+    &__core{
+      flex:1;
+      outline:none;
+      font-size:$h5;
+      height:$h3;
+      border:none;
+      outline:none;
+      -webkit-tap-highlight-color: transparent;
+      position: relative;
+      background:none;
+      margin:0;
+      color:inherit;
+      z-index:99;
+      caret-color: $primary;
+      font-family: inherit;
+      &::-webkit-input-placeholder{
+        color:$gray;
+        line-height: normal;
+      }
+    }
+  }
+}
+:host([shape="conner"]){
+  .hc-input{
+    @include border_1px('default', $lightgray, $radius * 2);
+  }
+}
+:host([shape="rounder"]){
+  .hc-input{
+    @include border_1px('default', $lightgray, 2.4rem);
+  }
+}
+:host([shape="light"]){
+  .hc-input{
+    @include border_1px('default', $white, 0);
+    padding:0;
+    height:auto;
+  }
+}
+:host([shape="fill"]){
+  .hc-input{
+    @include border_1px('default', $white, 0);
+    background:$light;
+  }
+}
+:host([shape="fill"][error]){
+  .hc-input{
+    @include border_1px('default', rgba($danger, 0.3), 0);
+    background:rgba($danger, 0.03);
+    &__core{
+      caret-color: $danger;
+      &::-webkit-input-placeholder{
+        color:rgba($danger, 0.3);
+      }
+    }
+  }
+}
+:host([shape="line"]){
+  .hc-input{
+    @include border_1px('bottom', $lightgray, 0);
+  }
+}
+:host([error]){
+  .hc-input{
+    @include border_1px('default', $danger, 0);
+    &__core{
+      caret-color: $danger;
+    }
+  }
+  &:after{
+    content:attr(error);
+    font-size:$h6;
+    color:$danger;
+  }
+}
+
+:host([warning]){
+  .hc-input{
+    @include border_1px('default', $warning, 0);
+    &__core{
+      caret-color: $warning;
+    }
+  }
+  &:after{
+    content:attr(warning);
+    font-size:$h6;
+    color:$warning;
+  }
+}
+:host([align="right"]){
+  .hc-input__core{
+    text-align:right;
+  }
+}

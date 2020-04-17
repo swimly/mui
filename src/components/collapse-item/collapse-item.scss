@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  .item{
+    .handle{
+      .title{
+        font-size:$h5;
+        color:$black;
+        font-weight: normal;
+        display:flex;
+        margin:0;
+        flex-direction: row;
+        position: relative;
+        padding:0.5rem 0;
+        &:after{
+          content:"";
+          display:inline-block;
+          position: absolute;
+          left:0;
+          width:100%;
+          height:1px;
+          background:$lightgray;
+          bottom:0;
+          transform: scaleY(0.5);
+        }
+        .label{
+          flex:1;
+        }
+        .indicate{
+          transition: 0.3s;
+          color:$lightgray;
+        }
+      }
+    }
+    &.active{
+      .handle{
+        .title{
+          .indicate{
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    .content{
+      overflow:hidden;
+      // transition: max-height 0.3s ease-out;
+      .slot{
+        display:block;
+      }
+    }
+  }
+}

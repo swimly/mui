@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mui</title>
+  <style>
+    html {
+      font-size: 125%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: #f5f5f5;
+    }
+
+    h2 {
+      font-size: 0.8rem;
+      font-weight: normal;
+      padding: 0 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    ul li {
+      width: 33.33%;
+      padding: 0.2rem;
+      box-sizing: border-box;
+    }
+
+    ul::after {
+      content: "";
+      display: inline-block;
+      width: 33.33%;
+    }
+
+    a {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      background: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: #262626;
+      justify-content: center;
+      height: 5rem;
+      font-size: 0.8rem;
+      border-radius: 0.2rem;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a span {
+      font-size: 0.6rem;
+      color: #8c8c8c;
+    }
+
+    a b {
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <hc-page titles="组件" left-buttons="[]" padding="0.5rem">
+    <h2>表单</h2>
+    <ul>
+      <li><a href="./button.html"><span>hc-button</span> <b>按钮</b></a></li>
+      <li><a href="./checkbox.html"><span>hc-checkbox</span> <b>复选框</b></a></li>
+      <li><a href="./radio.html"><span>hc-radio</span> <b>单选</b></a></li>
+      <li><a href="./switch.html"><span>hc-switch</span> <b>开关</b></a></li>
+      <li><a href="./input.html"><span>hc-input</span> <b>输入框</b></a></li>
+      <li><a href="./form.html"><span>hc-form</span> <b>表单</b></a></li>
+    </ul>
+    <h2>布局</h2>
+    <ul>
+      <li><a href="./page.html"><span>hc-page</span> <b>布局</b></a></li>
+      <li><a href="./row.html"><span>hc-row</span> <b>栅格</b></a></li>
+      <li><a href="./cell.html"><span>hc-cell</span> <b>单元格</b></a></li>
+      <li><a href="./image.html"><span>hc-image</span> <b>图片</b></a></li>
+      <li><a href="./icon.html"><span>hc-icon</span> <b>图标</b></a></li>
+      <li><a href="./badge.html"><span>hc-badge</span> <b>徽章</b></a></li>
+      <li><a href="./tag.html"><span>hc-tag</span> <b>标签</b></a></li>
+      <li><a href="./indexlist.html"><span>hc-indexlist</span> <b>索引列表</b></a></li>
+      <li><a href="./tab.html"><span>hc-tab</span> <b>切换</b></a></li>
+      <li><a href="./swiper.html"><span>hc-swiper</span> <b>轮播图</b></a></li>
+      <li><a href="./collapse.html"><span>hc-collapse</span> <b>折叠面板</b></a></li>
+      <li><a href="./tabbar.html"><span>hc-tabbar</span> <b>导航</b></a></li>
+      <li><a href="./image-preview.html"><span>hc-image-preview</span> <b>图片预览</b></a></li>
+    </ul>
+    <h2>输入</h2>
+    <ul>
+      <li><a href="./signature.html"><span>hc-signature</span> <b>签名</b></a></li>
+      <li><a href="./keyboard.html"><span>hc-keyboard</span> <b>安全键盘</b></a></li>
+      <li><a href="./actionsheet.html"><span>hc-actionsheet</span> <b>单选</b></a></li>
+      <li><a href="./calendar.html"><span>hc-calendar</span> <b>日历</b></a></li>
+      <li><a href="./picker.html"><span>hc-picker</span> <b>选择</b></a></li>
+      <li><a href="./slider.html"><span>hc-slider</span> <b>滑块</b></a></li>
+      <li><a href="./stepper.html"><span>hc-stepper</span> <b>步进器</b></a></li>
+      <li><a href="./dropdown.html"><span>hc-dropdown</span> <b>下拉菜单</b></a></li>
+    </ul>
+    <h2>反馈</h2>
+    <ul>
+      <li><a href="./drawer.html"><span>hc-drawer</span> <b>抽屉</b></a></li>
+      <li><a href="./dialog.html"><span>hc-dialog</span> <b>弹框</b></a></li>
+      <li><a href="./toast.html"><span>hc-toast</span> <b>吐司</b></a></li>
+      <li><a href="./notify.html"><span>hc-notify</span> <b>消息提示</b></a></li>
+    </ul>
+    <h2>大数据</h2>
+    <ul>
+      <li><a href="./echarts.html"><span>hc-echarts</span> <b>图表</b></a></li>
+    </ul>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+
+</html>

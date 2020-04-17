@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>seclction</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="selection">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-selection id="china"></hc-selection>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script src="data/china.js"></script>
+  <!-- <script type="module">
+    import { hc_selection } from '../../www/build/hc-selection.entry.js'
+    const selection = new hc_selection({})
+    window.selection = selection
+  </script> -->
+  <script>
+    // const button = document.querySelector('hc-button')
+    // button.addEventListener('click', () => {
+    //   selection.init({
+    //     data: `[{label: '支付宝'}, {label: '微信'}, {label: '银联'}]`
+    //   })
+    // })
+    const china = document.querySelector('#china')
+    china.data = JSON.stringify(China)
+  </script>
+</body>
+</html>

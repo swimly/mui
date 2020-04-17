@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>日历</title>
+  <link rel="stylesheet" href="base.css">
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</head>
+<body>
+  <hc-page titles="日历">
+    <div class="panel">
+      <h2>可以切换视图</h2>
+      <hc-calendar vshape="true"></hc-calendar>
+    </div>
+    <div class="panel">
+      <h2>月视图</h2>
+      <hc-calendar></hc-calendar>
+    </div>
+    <div class="panel">
+      <h2>周视图</h2>
+      <hc-calendar type="week"></hc-calendar>
+    </div>
+    <div class="panel">
+      <h2>带农历</h2>
+      <hc-calendar lunar="true"></hc-calendar>
+    </div>
+    <div class="panel">
+      <h2>选择时间段</h2>
+      <hc-calendar choice="1"></hc-calendar>
+    </div>
+    <div class="panel">
+      <h2>指令调用</h2>
+      <hc-button type="primary" id="zl">弹出</hc-button>
+    </div>
+  </hc-page>
+  <script type="module">
+    import { hc_calendar } from '../../www/build/hc-calendar.entry.js'
+    const calendar = new hc_calendar({})
+    window.calendar = calendar
+  </script>
+  <script>
+    const zl = document.querySelector('#zl')
+    zl.addEventListener('click', () => {
+      calendar.init({
+        
+      }).then(res => {
+        res.addEventListener('vclick', (e) => {
+          console.log(e.detail.value)
+        })
+      })
+    })
+  </script>
+</body>
+</html>

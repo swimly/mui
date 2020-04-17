@@ -1,0 +1,105 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  position: relative;
+  &:after{
+    content:"";
+    display:block;
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:1px;
+    background:$lightgray;
+    transform: scaleY(0.5);
+  }
+  .tab{
+    flex:1;
+    overflow: hidden;
+    .indicate{
+      position: absolute;
+      display:inline-block;
+      width:1em;
+      height:2px;
+      background:$primary;
+      left:0;
+      bottom:0;
+      border-radius:2px;
+      z-index:10;
+      transition:0.3s;
+    }
+    &-wrap{
+      display:flex;
+      flex-direction: row;
+      align-items:center;
+      flex-wrap: nowrap;
+      position: relative;
+      flex:1;
+      span{
+        flex-shrink: 0;
+        font-size:$h5;
+        height:2.4rem;
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        margin:0 1rem;
+        &.active{
+          color:$primary;
+        }
+      }
+    }
+  }
+  .more{
+    slot{
+      background:#fff;
+      position: relative;
+      z-index:10;
+    }
+    &.show{
+      .more-content{
+        display:block;
+      }
+    }
+    &-content{
+      position: absolute;
+      left:0;
+      right:0;
+      top:2.4rem;
+      background:#fff;
+      box-shadow: 0 2px 5px #ccc;
+      padding:0.5rem;
+      display:flex;
+      flex-direction: row;
+      list-style: none;
+      margin:0;
+      flex-wrap: wrap;
+      display:flex;
+      flex-direction:row;
+      z-index:10;
+      display:none;
+      z-index:9;
+      li{
+        display:inline-block;
+        width:33.33%;
+        padding:0.2rem;
+        box-sizing: border-box;
+        span{
+          display:inline-block;
+          height:1.6rem;
+          line-height:1.6rem;
+          border:1px solid $lightgray;
+          width:100%;
+          text-align:center;
+          font-size:0.7rem;
+          border-radius:0.2rem;
+          &.active{
+            background:$primary;
+            border-color:$primary;
+            color:#fff;
+          }
+        }
+      }
+    }
+  }
+}

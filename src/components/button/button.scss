@@ -1,0 +1,128 @@
+:host {
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+  height:2.4rem;
+  justify-content: center;
+  background-color:$white;
+  position:relative;
+  @include border_1px('default', $lightgray, 0);
+  .hc-button__label{
+    font-size:0.8rem;
+    color:inherit;
+  }
+  &:before{
+    content:"";
+    position:absolute;
+    display:block;
+    top:-1px;
+    right:-1px;
+    bottom:-1px;
+    left:0;
+    z-index:100;
+    background:rgba($black, 0.1);
+    opacity:0;
+    transition:0.3s;
+  }
+}
+:host([disabled="true"]){
+  &:before{
+    opacity:1;
+    background: rgba($white, 0.8);
+  }
+}
+:host([active="true"]){
+  &:before{
+    opacity:1;
+    transition:0.3s;
+  }
+}
+:host([type]),:host([color]){
+  color:$white;
+}
+:host([type="info"]){
+  background-color: $graybg;
+  @include border_1px('default', $graybg, 0);
+  color:$black;
+}
+:host([type="info"][plain]){
+  background-color:rgba($graybg, 0.1);
+  color:$black;
+  &:before{
+    background-color: rgba($graybg, 0.1);
+  }
+}
+:host([type="primary"]){
+  background-color: $primary;
+  @include border_1px('default', $primary, 0);
+}
+:host([type="primary"][plain]){
+  background-color:rgba($primary, 0.1);
+  color:$primary;
+  &:before{
+    background-color: rgba($primary, 0.1);
+  }
+}
+:host([type="danger"][plain]) {
+  background-color:rgba($danger, 0.1);
+  color:$danger;
+  &:before{
+    background-color: rgba($danger, 0.1);
+  }
+}
+:host([type="primary"][outline]){
+  background-color:$white;
+  color:$primary;
+  &:before{
+    background-color: rgba($primary, 0.1);
+  }
+}
+:host([type="danger"][outline]) {
+  background-color:$white;
+  color:$danger;
+  &:before{
+    background-color: rgba($danger, 0.1);
+  }
+}
+:host([type="danger"]){
+  background-color:$danger;
+  @include border_1px('default', $danger, 0);
+}
+:host([shape="conner"]) {
+  border-radius:$radius;
+}
+:host([shape="rounder"]) {
+  @include border_1px('default', $lightgray, 2.8rem);
+  border-radius:1.4rem;
+  &:before{
+    border-radius:1.4rem;
+  }
+}
+:host([type="primary"][shape="conner"]) {
+  @include buttonRadius($radius, $primary)
+}
+:host([type="primary"][shape="rounder"]) {
+  @include buttonRadius(1.2rem, $primary)
+}
+:host([type="danger"][shape="conner"]) {
+  @include buttonRadius($radius, $danger)
+}
+:host([type="danger"][shape="rounder"]) {
+  @include buttonRadius(1.2rem, $danger)
+}
+:host([shape="rounder"]){
+  border-radius:1.4rem;
+}
+:host([size]){
+  display:inline-flex;
+  padding:0 1rem;
+}
+:host([size="mini"]){
+  height:$mini;
+}
+:host([size="small"]){
+  height:$small;
+}
+:host([size="large"]){
+  height:$large;
+}

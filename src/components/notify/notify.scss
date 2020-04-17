@@ -1,0 +1,58 @@
+:host {
+  display: inline-flex;
+  flex-direction:column;
+  align-items:center;
+  font-size:0.7rem;
+  background-color:$black;
+  color:$white;
+  padding:1rem;
+  border-radius:$radius;
+  position: fixed;
+  top:55%;
+  left:50%;
+  width:4rem;
+  height:4rem;
+  justify-content: center;
+  transform:translate(-50%,-50%);
+  opacity:0;
+  z-index:-1;
+  hc-icon{
+    margin-bottom:0.3rem;
+  }
+}
+:host([visible]){
+  opacity:1;
+  top:50%;
+  z-index:100;
+}
+:host([position="top"]),
+:host([position="bottom"]){
+  flex-direction: row;
+  width:100%;
+  height:2.4rem;
+  padding:0;
+  border-radius:0;
+  transform: translate(0,0);
+  left:0;
+  hc-icon{
+    margin:0 0.3rem 0 0;
+  }
+}
+:host([position="top"]){
+  top:0;
+  transform: translate(0, -100%);
+}
+:host([position="top"][visible]){
+  z-index: 100;
+  opacity:1;
+  transform: translate(0,0);
+}
+:host([position="bottom"]){
+  top:100%;
+  transform: translate(0, 0);
+}
+:host([position="bottom"][visible]){
+  transform: translate(0,-100%);
+  z-index: 100;
+  opacity:1;
+}

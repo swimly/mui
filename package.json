@@ -1,0 +1,48 @@
+{
+  "name": "mui",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/mui/mui.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs-readme",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@polymer/polymer": "^3.3.1",
+    "@stencil/core": "^1.8.8",
+    "@stencil/sass": "^1.1.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stencil-inline-svg": "^1.0.1",
+    "workbox-build": "4.3.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/iron-icons": "^3.0.1",
+    "@stencil/router": "^1.0.1",
+    "@zxing/library": "^0.16.0",
+    "echarts": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "instascan": "^1.0.0",
+    "jsqr": "^1.2.0",
+    "mescroll.js": "^1.4.1",
+    "minirefresh": "^2.0.2",
+    "mobile-pull-to-refresh": "^0.2.2",
+    "qrcodejs": "^1.0.0",
+    "stencil-click-outside": "^1.5.0",
+    "stencil-constructible-style": "^1.1.5"
+  }
+}

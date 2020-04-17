@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弹窗</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="弹窗">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-button id="d" size="small">弹出</hc-button>
+      <hc-dialog
+        titles="提示"
+        content="夜深了，赶紧休息吧！"
+      ></hc-dialog>
+    </div>
+    <div class="panel">
+      <h2>不同的效果</h2>
+      <hc-button size="small" class="button">zoom</hc-button>
+      <hc-button size="small" class="button">slidedown</hc-button>
+      <hc-button size="small" class="button">slideup</hc-button>
+      <hc-button size="small" class="button">zoomdown</hc-button>
+      <hc-button size="small" class="button">zoomup</hc-button>
+      <hc-button size="small" class="button">fade</hc-button>
+    </div>
+    <div class="panel">
+      <h2>定时关闭</h2>
+      <hc-button size="small" id="duration">定时关闭</hc-button>
+    </div>
+    <div class="panel">
+      <h2>带输入框</h2>
+      <hc-button size="small" id="input">请填写</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_dialog } from '../../www/build/hc-dialog.entry.js'
+    const dialog = new hc_dialog({})
+    window.dialog = dialog
+  </script>
+  <script>
+    document.querySelector('#d').addEventListener('click', e => {
+      var dialog = document.querySelector('hc-dialog')
+      dialog.visible = true
+      dialog.addEventListener('onHide', data => {
+        console.log(data)
+      })
+    })
+    var buttons = document.querySelectorAll('.button')
+      buttons.forEach(button => {
+        button.addEventListener('click', e => {
+          var effect = button.innerText
+          var t = dialog.init({
+            titles: '提示！',
+            content: '恭喜您，成功注册为本站会员',
+            effect: effect,
+            footer: "['取消', '确定']"
+          })
+          console.log(t)
+          t.then(res => {
+            res.addEventListener('onHide', data => {
+              console.log(data)
+            })
+          })
+        })
+      })
+      var duration = document.querySelector('#duration')
+      duration.addEventListener('click', () => {
+        var t = dialog.init({
+          titles: '提示！',
+          content: '恭喜您，成功注册为本站会员',
+          effect: 'zoom',
+          duration: 8000,
+          footer: "['关闭']"
+        })
+        t.then(res => {
+          res.addEventListener('onHide', data => {
+            console.log(data)
+          })
+        })
+      })
+      var input = document.querySelector('#input')
+        input.addEventListener('click', () => {
+          var t = dialog.init({
+            titles: '提示！',
+            type: 'prompt',
+            placeholder: '改变了的',
+            effect: 'zoom',
+            footer: "['取消', '确定']"
+          })
+          t.then(res => {
+            res.addEventListener('onHide', data => {
+              console.log(data)
+            })
+          })
+        })
+  </script>
+</body>
+</html>

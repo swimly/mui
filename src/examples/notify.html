@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>消息提示</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <hc-page titles="消息提示">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-button size="small" type="primary" id="l1">弹出</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同位置</h2>
+      <hc-button size="small" type="primary" id="l2">顶部</hc-button>
+      <hc-button size="small" type="primary" id="l3">底部</hc-button>
+    </div>
+    <div class="panel">
+      <h2>不同形式</h2>
+      <hc-button size="small" type="primary" id="l4">成功</hc-button>
+      <hc-button size="small" type="primary" id="l5">提示</hc-button>
+      <hc-button size="small" type="primary" id="l6">错误</hc-button>
+    </div>
+    <div class="panel">
+      <h2>自定义颜色</h2>
+      <hc-button size="small" type="primary" id="l7">弹出</hc-button>
+    </div>
+    <div class="panel">
+      <h2>加载动画</h2>
+      <hc-button size="small" type="primary" id="l8">弹出</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_notify } from '../../www/build/hc-notify.entry.js'
+    const notify = new hc_notify({})
+    window.notify = notify
+  </script>
+  <script>
+    document.querySelector('#l1').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        icon: 'reduce'
+      })
+    })
+    document.querySelector('#l2').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        icon: 'reduce',
+        position: 'top',
+        iconsize: 28
+      })
+    })
+    document.querySelector('#l3').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        icon: 'reduce',
+        position: 'bottom',
+        iconsize: 28
+      })
+    })
+    document.querySelector('#l4').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        position: 'top',
+        type: 'success'
+      })
+    })
+    document.querySelector('#l5').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        iconsize: 28,
+        position: 'top',
+        type: 'warning'
+      })
+    })
+    document.querySelector('#l6').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        position: 'bottom',
+        iconsize: 28,
+        type: 'error'
+      })
+    })
+    document.querySelector('#l7').addEventListener('click', () => {
+      notify.init({
+        text: '提示消息',
+        duration: 3000,
+        position: 'top',
+        iconsize: 28,
+        background: '#2170D9'
+      })
+    })
+    document.querySelector('#l8').addEventListener('click', () => {
+      notify.init({
+        text: '加载中',
+        duration: 3000,
+        iconsize: 28,
+        icon: 'loading',
+        spin: true
+      })
+    })
+  </script>
+</body>
+
+</html>

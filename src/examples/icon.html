@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="icon图标">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <p>按钮是最基础的控件，页面的所有交互操作都需要按钮承担最后的提交操作！</p>
+      <hc-icon name="camera"></hc-icon>
+    </div>
+    <div class="panel">
+      <h2>改变大小颜色</h2>
+      <p>size改变大小，color改变颜色</p>
+      <hc-icon name="packaging" size="48" color="#f00"></hc-icon>
+      <p style="color:#ff0;">
+        <hc-icon name="packaging" size="48"></hc-icon>
+      </p>
+    </div>
+    <div class="panel">
+      <h2>旋转的图标</h2>
+      <p>旋转的图标，一般用来做加载动画！</p>
+      <hc-icon name="loading" size="32" color="#262626" spin></hc-icon>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

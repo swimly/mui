@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片预览</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="图片预览">
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-image-preview>
+        <hc-image src="http://www.33lc.com/article/UploadPic/2012-7/201272713565163040.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+      </hc-image-preview>
+      <p>不足一行</p>
+      <hc-image-preview column="2">
+        <hc-image src="http://www.33lc.com/article/UploadPic/2012-7/201272713565163040.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+      </hc-image-preview>
+      <p>一张图</p>
+      <hc-image-preview column="1">
+        <hc-image src="http://www.33lc.com/article/UploadPic/2012-7/201272713565163040.jpg"></hc-image>
+      </hc-image-preview>
+      <p>九宫格</p>
+      <hc-image-preview>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+        <hc-image lazy="true" src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1212/10/c1/16491670_1355126816487.jpg"></hc-image>
+        <hc-image src="http://gss0.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/b17eca8065380cd718874c1fa444ad34588281a3.jpg"></hc-image>
+      </hc-image-preview>
+    </div>
+    <div class="panel">
+      <h2>指令调用</h2>
+      <hc-button type="primary" size="mini" shape="conner">弹出</hc-button>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_image_preview } from '../../www/build/hc-image-preview.entry.js'
+    const imagepreview = new hc_image_preview({})
+    window.imagepreview = imagepreview
+  </script>
+  <script>
+
+  </script>
+</body>
+</html>

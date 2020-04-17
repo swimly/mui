@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单选</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="单选">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-radio checked="true" value="1">男</hc-radio>
+    </div>
+    <div class="panel">
+      <h2>圆形</h2>
+      <hc-radio shape="circle" value="1">男</hc-radio>
+    </div>
+    <div class="panel">
+      <h2>块状</h2>
+      <hc-radio shape="circle" type="block" value="1">受令人应按规定填写记录并进行复诵，发令人确认受令人复诵无误后方可给予( )，受令人不得利用其它纸张进行临时记录。</hc-radio>
+      <hc-radio shape="circle" type="block-reverse" value="0">受令人应按规定填写记录并进行复诵，发令人确认受令人复诵无误后方可给予( )，受令人不得利用其它纸张进行临时记录。</hc-radio>
+    </div>
+    <div class="panel">
+      <h2>按钮模式</h2>
+      <hc-radio type="outline">web前端开发</hc-radio>
+      <hc-radio type="fill">后端开发</hc-radio>
+      <hc-radio type="outline">设计ui</hc-radio>
+    </div>
+    <div class="panel">
+      <h2>自定义颜色</h2>
+      <hc-radio color="#e90000" shape="circle" value="1">男</hc-radio>
+      <hc-radio color="#e90000" type="outline">web前端开发</hc-radio>
+      <hc-radio color="#e90000" type="fill">后端开发</hc-radio>
+    </div>
+    <div class="panel">
+      <h2>单选按钮组</h2>
+      <hc-radio-group id="group" name="sex">
+        <hc-radio value="0">男</hc-radio>
+        <hc-radio value="1">web前端开发</hc-radio>
+        <hc-radio value="2">后端开发</hc-radio>
+      </hc-radio-group>
+      <p id="result"></p>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script>
+    var radios = document.querySelectorAll('hc-radio')
+    radios.forEach(item => {
+      item.addEventListener('vchange', e => {
+        console.log(e)
+      })
+    })
+    var group = document.querySelector('#group')
+    group.value = '0'
+    group.addEventListener('vichange', e => {
+      document.querySelector('#result').innerHTML = e.detail
+    })
+  </script>
+</body>
+</html>

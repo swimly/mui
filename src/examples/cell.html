@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单元格</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="单元格">
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-cell label="姓名" value="刘勇"></hc-cell>
+      <hc-cell label="性别" value="男"></hc-cell>
+      <hc-cell label="手机号" value="18827078587"></hc-cell>
+      <hc-cell label="邮箱" value="979741120@qq.com"></hc-cell>
+    </div>
+    <div class="panel">
+      <h2>副标题</h2>
+      <hc-cell label="姓名" subject="这里是副标题" value="刘勇"></hc-cell>
+    </div>
+    <div class="panel">
+      <h2>带图标</h2>
+      <hc-cell icon-url="assets/icon2.png" label="姓名" subject="这里是副标题" value="刘勇"></hc-cell>
+    </div>
+    <div class="panel">
+      <h2>垂直居中</h2>
+      <hc-cell icon-url="assets/icon2.png" label="姓名" subject="这里是副标题" value="刘勇" middle="true"></hc-cell>
+    </div>
+    <div class="panel">
+      <h2>带箭头</h2>
+      <hc-cell icon-url="assets/icon2.png" label="姓名" subject="这里是副标题" value="刘勇" middle="true" arrow-direction="right"></hc-cell>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>
