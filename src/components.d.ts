@@ -186,13 +186,16 @@ export namespace Components {
   }
   interface HcImagePreview {
     'column': number;
+    'current': number;
     'data': any;
+    'height': number;
     /**
     * 已服务的形式调用
     */
     'init': () => Promise<void>;
     'space': number;
     'visible': boolean;
+    'width': number;
   }
   interface HcImagebox {
     'data': object[];
@@ -885,9 +888,12 @@ declare namespace LocalJSX {
   }
   interface HcImagePreview {
     'column'?: number;
+    'current'?: number;
     'data'?: any;
+    'height'?: number;
     'space'?: number;
     'visible'?: boolean;
+    'width'?: number;
   }
   interface HcImagebox {
     'data'?: object[];
