@@ -24,16 +24,35 @@
 | `year`      | `year`      |             | `number`  | `(new Date()).getFullYear()`  |
 
 
+## Methods
+
+### `init(option: any) => Promise<HTMLHcCalendarElement>`
+
+
+
+#### Returns
+
+Type: `Promise<HTMLHcCalendarElement>`
+
+
+
+
 ## Dependencies
+
+### Used by
+
+ - [hc-calendar]()
 
 ### Depends on
 
 - [hc-icon](../icon)
+- [hc-calendar]()
+- [hc-drawer](../drawer)
 
 ### Graph
 ```mermaid
 graph TD;
-  hc-calendar --> hc-icon
+  hc-calendar --> hc-calendar
   style hc-calendar fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -3,14 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>textfield</title>
+  <title>悬浮框</title>
   <link rel="stylesheet" href="base.css">
+  <style>
+    hc-button{
+      margin:0;
+    }
+  </style>
 </head>
 <body>
-  <hc-popover>
-    <p>啊哈哈哈</p>
-  </hc-popover>
+  <hc-page titles="悬浮框">
+    <div class="panel">
+      <h2>自定义弹出方向</h2>
+      <hc-row justify="space-between">
+        <hc-popover direction="bottom-left" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">下左</hc-button>
+        </hc-popover>
+        <hc-popover direction="bottom-center" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">下中</hc-button>
+        </hc-popover>
+        <hc-popover direction="bottom-right" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">下右</hc-button>
+        </hc-popover>
+      </hc-row>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <hc-row justify="space-between">
+        <hc-popover direction="top-left" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">上左</hc-button>
+        </hc-popover>
+        <hc-popover direction="top-center" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">上中</hc-button>
+        </hc-popover>
+        <hc-popover direction="top-right" data="[{label: '查看'},{label: '编辑'}, {label: '删除'}]">
+          <hc-button type="primary" size="small">上又</hc-button>
+        </hc-popover>
+      </hc-row>
+    </div>
+    <div class="panel">
+      <h2>指令形式调用</h2>
+      <p>自动计算</p>
+      <hc-row>
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+      </hc-row>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <hc-row justify="center">
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+        <hc-button class="zl" style="margin-left:1rem;" type="primary" size="small">打开</hc-button>
+      </hc-row>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <hc-row justify="flex-end">
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+      </hc-row>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+      <hc-row justify="space-between">
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+        <hc-button class="zl" type="primary" size="small">打开</hc-button>
+      </hc-row>
+    </div>
+  </hc-page>
   <script type="module" src="../../www/build/mui.esm.js"></script>
   <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_popover } from '../../www/build/hc-popover.entry.js'
+    const popover = new hc_popover({})
+    window.popover = popover
+  </script>
+  <script>
+    var buttons = document.querySelectorAll('.zl')
+    buttons.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        popover.init({
+          position: JSON.stringify(e.target.getBoundingClientRect()),
+          data: `[{label: '查看'},{label: '编辑'}, {label: '删除'}]`
+        })
+      })
+    })
+  </script>
 </body>
 </html>

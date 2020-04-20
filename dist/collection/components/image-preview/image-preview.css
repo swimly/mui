@@ -20,8 +20,10 @@
 }
 :host .preview {
   position: fixed;
-  transition: 0.3s;
   transform-origin: center center;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
 }
 :host .pop {
   position: fixed;

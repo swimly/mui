@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>遮罩</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="遮罩">
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-button id="i1" type="primary" size="mini" shape="conner">打开遮罩</hc-button>
+    </div>
+    <div class="panel">
+      <h2>自定义遮罩颜色</h2>
+      <hc-button id="i3" type="primary" size="mini" shape="conner">打开遮罩</hc-button>
+    </div>
+    <div class="panel">
+      <h2>内容填充</h2>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+    </div>
+    <div class="panel">
+      <h2>从当前位置显示</h2>
+      <hc-button id="i2" type="primary" size="mini" shape="conner">打开遮罩</hc-button>
+    </div>
+    <div class="panel">
+      <h2>从当前位置显示</h2>
+      <hc-button id="i4" type="primary" size="mini" shape="conner">打开遮罩</hc-button>
+    </div>
+    <div class="panel">
+      <h2>内容填充</h2>
+      <p>在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。在下面的例子中，我们要制作一个充当链接按钮的图像。我们将使用 onMouseOver 事件和 onMouseOut 事件来驱动 JavaScript 函数切换图像。</p>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+  <script type="module">
+    import { hc_mask } from '../../www/build/hc-mask.entry.js'
+      const mask = new hc_mask({})
+      window.mask = mask
+  </script>
+  <script>
+    document.querySelector('#i1').addEventListener('click', () => {
+      mask.init({
+        maskClosable: true
+      })
+    })
+    document.querySelector('#i2').addEventListener('click', (e) => {
+      mask.init({
+        source: e.target,
+        maskClosable: true
+      })
+    })
+    document.querySelector('#i3').addEventListener('click', (e) => {
+      mask.init({
+        background: 'rgba(255,255,255,0.8)',
+        maskClosable: true
+      })
+    })
+    document.querySelector('#i4').addEventListener('click', (e) => {
+      mask.init({
+        background: 'rgba(255,255,255,0.8)',
+        source: e.target,
+        maskClosable: true
+      })
+    })
+  </script>
+</body>
+</html>

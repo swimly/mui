@@ -24,14 +24,12 @@ export declare class ImagePreview {
     $indicate: HTMLElement;
     componentWillLoad(): void;
     componentDidLoad(): void;
-    visibaleHandle(v: boolean): void;
     renderLayout(): void;
     bindClick(item: any, index: any): void;
     moveMax(): void;
     moveMin(): void;
-    renderSwiper(): void;
+    initCover(): void;
     bindTouch(): void;
-    moveHide(e: any): void;
     computedUrl(): void;
     private getCssClassMap;
     render(): any;

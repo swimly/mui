@@ -226,6 +226,13 @@ export namespace Components {
     'value': string;
     'vibrate': number;
   }
+  interface HcMask {
+    'background': string;
+    'init': (option: any) => Promise<HTMLHcMaskElement>;
+    'maskClosable': boolean;
+    'source': any;
+    'visible': boolean;
+  }
   interface HcNotify {
     'background': string;
     /**
@@ -272,7 +279,16 @@ export namespace Components {
     'vis': number;
   }
   interface HcPopover {
-    'pos': object;
+    'bindClick': () => Promise<void>;
+    'data': string;
+    'direction': string;
+    /**
+    * 已服务的形式调用
+    */
+    'init': (option: any) => Promise<HTMLHcPopoverElement>;
+    'initPosition': () => Promise<void>;
+    'offset': number;
+    'position': string;
   }
   interface HcProgress {
     'percent': (percent: number) => Promise<void>;
@@ -534,6 +550,12 @@ declare global {
     new (): HTMLHcKeyboardElement;
   };
 
+  interface HTMLHcMaskElement extends Components.HcMask, HTMLStencilElement {}
+  var HTMLHcMaskElement: {
+    prototype: HTMLHcMaskElement;
+    new (): HTMLHcMaskElement;
+  };
+
   interface HTMLHcNotifyElement extends Components.HcNotify, HTMLStencilElement {}
   var HTMLHcNotifyElement: {
     prototype: HTMLHcNotifyElement;
@@ -692,6 +714,7 @@ declare global {
     'hc-indexlist': HTMLHcIndexlistElement;
     'hc-input': HTMLHcInputElement;
     'hc-keyboard': HTMLHcKeyboardElement;
+    'hc-mask': HTMLHcMaskElement;
     'hc-notify': HTMLHcNotifyElement;
     'hc-page': HTMLHcPageElement;
     'hc-picker': HTMLHcPickerElement;
@@ -926,6 +949,12 @@ declare namespace LocalJSX {
     'value'?: string;
     'vibrate'?: number;
   }
+  interface HcMask {
+    'background'?: string;
+    'maskClosable'?: boolean;
+    'source'?: any;
+    'visible'?: boolean;
+  }
   interface HcNotify {
     'background'?: string;
     'duration'?: number;
@@ -962,7 +991,10 @@ declare namespace LocalJSX {
     'vis'?: number;
   }
   interface HcPopover {
-    'pos'?: object;
+    'data'?: string;
+    'direction'?: string;
+    'offset'?: number;
+    'position'?: string;
   }
   interface HcProgress {}
   interface HcQrcode {}
@@ -1076,6 +1108,7 @@ declare namespace LocalJSX {
     'hc-indexlist': HcIndexlist;
     'hc-input': HcInput;
     'hc-keyboard': HcKeyboard;
+    'hc-mask': HcMask;
     'hc-notify': HcNotify;
     'hc-page': HcPage;
     'hc-picker': HcPicker;
@@ -1133,6 +1166,7 @@ declare module "@stencil/core" {
       'hc-indexlist': LocalJSX.HcIndexlist & JSXBase.HTMLAttributes<HTMLHcIndexlistElement>;
       'hc-input': LocalJSX.HcInput & JSXBase.HTMLAttributes<HTMLHcInputElement>;
       'hc-keyboard': LocalJSX.HcKeyboard & JSXBase.HTMLAttributes<HTMLHcKeyboardElement>;
+      'hc-mask': LocalJSX.HcMask & JSXBase.HTMLAttributes<HTMLHcMaskElement>;
       'hc-notify': LocalJSX.HcNotify & JSXBase.HTMLAttributes<HTMLHcNotifyElement>;
       'hc-page': LocalJSX.HcPage & JSXBase.HTMLAttributes<HTMLHcPageElement>;
       'hc-picker': LocalJSX.HcPicker & JSXBase.HTMLAttributes<HTMLHcPickerElement>;

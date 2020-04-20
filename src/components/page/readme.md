@@ -7,17 +7,17 @@
 
 ## Properties
 
-| Property         | Attribute        | Description | Type                | Default                                             |
-| ---------------- | ---------------- | ----------- | ------------------- | --------------------------------------------------- |
-| `background`     | `background`     |             | `string`            | `'#f5f5f5'`                                         |
-| `color`          | `color`          |             | `string`            | `'#fff'`                                            |
-| `hideHeader`     | `hide-header`    |             | `boolean`           | `false`                                             |
-| `leftButtons`    | `left-buttons`   |             | `string`            | `'[{icon: "arrow-lift", label: "返回", id: "back"}]'` |
-| `padding`        | `padding`        |             | `string`            | `'0'`                                               |
-| `rightButtons`   | `right-buttons`  |             | `string`            | `undefined`                                         |
-| `scrolldistance` | `scrolldistance` |             | `number`            | `0`                                                 |
-| `theme`          | `theme`          |             | `"dark" \| "light"` | `'light'`                                           |
-| `titles`         | `titles`         |             | `string`            | `undefined`                                         |
+| Property         | Attribute         | Description | Type      | Default                                             |
+| ---------------- | ----------------- | ----------- | --------- | --------------------------------------------------- |
+| `background`     | `background`      |             | `string`  | `'#f5f5f5'`                                         |
+| `color`          | `color`           |             | `string`  | `'#262626'`                                         |
+| `headBackground` | `head-background` |             | `string`  | `'#fff'`                                            |
+| `hideHeader`     | `hide-header`     |             | `boolean` | `false`                                             |
+| `leftButtons`    | `left-buttons`    |             | `string`  | `'[{icon: "arrow-lift", label: "返回", id: "back"}]'` |
+| `padding`        | `padding`         |             | `string`  | `'0'`                                               |
+| `rightButtons`   | `right-buttons`   |             | `string`  | `'[]'`                                              |
+| `scrolldistance` | `scrolldistance`  |             | `number`  | `0`                                                 |
+| `titles`         | `titles`          |             | `string`  | `undefined`                                         |
 
 
 ## Events
