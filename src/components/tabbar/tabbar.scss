@@ -1,3 +1,16 @@
 :host {
-  display: block;
+  display: flex;
+  align-items:center;
+  position: relative;
+  &:before{
+    content:"";
+    display:block;
+    width:100%;
+    left:0;
+    top:0;
+    position: absolute;
+    height:1px;
+    background:$lightgray;
+    transform: scaleY(0.5);
+  }
 }

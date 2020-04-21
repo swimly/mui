@@ -1,4 +1,6 @@
-* [Home](/)
-* [HC_Button 按钮](src/components/button/README.md)
-* [HC_Dialog 弹窗](src/components/dialog/README.md)
-* [HC_Icon 图标](src/components/icon/README.md)
+* [首页](/)
+* 组件
+  * 表单
+    * [hc-button 按钮](src/components/button/README.md)
+    * [hc-radio 单选](src/components/radio/README.md)
+    * [hc-checkbox 复选框](src/components/icon/README.md)

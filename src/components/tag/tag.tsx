@@ -10,6 +10,7 @@ export class Tag {
   @Prop() type: string;
   @Prop() shape: string;
   @Prop() color: string;
+  @Prop() size: string;
   @Element() el: HTMLElement;
   componentDidLoad() {
     this.renderCss()

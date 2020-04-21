@@ -57,3 +57,13 @@
   @include border_1px('default', transparent, 3rem);
   border-radius:1.5rem;
 }
+:host([size="mini"]) {
+  font-size:0.6rem;
+  height:1.2rem;
+  padding:0 0.5rem;
+}
+:host([size="small"]) {
+  font-size:0.6rem;
+  height:1.3rem;
+  padding:0 0.6rem;
+}

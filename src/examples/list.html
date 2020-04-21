@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>列表</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="列表">
+    <div class="panel">
+      <h2>简单列表</h2>
+      <hc-list>
+        <hc-list-item titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item titles="拟办发文: 西部影视产人大常委会业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>搜索结果</h2>
+      <hc-list filter="人大常委会">
+        <hc-list-item titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item titles="拟办发文: 西部影视产人大常委会业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>带标签的列表</h2>
+      <hc-list>
+        <hc-list-item titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大">
+        <hc-row align="center">
+          <hc-col flex="1" align="left">
+            <hc-tag size="mini" type="danger" shape="outline">特急</hc-tag>
+          </hc-col>
+          <hc-col flex="1" align="right" style="font-size:0.6rem;color:#999;">2019-08-12 09:12</hc-col>
+        </hc-row>
+      </hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>排序列表</h2>
+      <hc-list type="sort">
+        <hc-list-item titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item titles="拟办发文: 西部影视产业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>带图标</h2>
+      <hc-list>
+        <hc-list-item suffix-icon="ellipsis" titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item suffix-icon="ellipsis" titles="拟办发文: 西部影视产业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>前面带图片的列表</h2>
+      <hc-list>
+        <hc-list-item prefix-url="./assets/icon2.png" titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item prefix-url="./assets/icon3.png" titles="拟办发文: 西部影视产业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>自定义图片大小</h2>
+      <hc-list prefix-size="100,70" vertical="center">
+        <hc-list-item prefix-url="./assets/img1.png" titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大" date="2019-08-12 09:12"></hc-list-item>
+        <hc-list-item reverse="true" prefix-url="./assets/img2.png" titles="拟办发文: 西部影视产业小镇有关工作会议
+        纪要" date="2019-08-12 09:12"></hc-list-item>
+      </hc-list>
+    </div>
+    <div class="panel">
+      <h2>自定义时间样式</h2>
+      <hc-list prefix-size="100,70" vertical="center">
+        <hc-list-item prefix-url="./assets/img1.png" titles="请示报告: 深圳市宝安区人大常委会办公室
+        关于转交《区六届人大四次会议人大">
+        <hc-row>
+          <hc-col align="right"><span style="font-size:0.7rem;color:#999;">2019-08-12 09:12</span></hc-col>
+        </hc-row>
+      </hc-list-item>
+      </hc-list>
+    </div>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

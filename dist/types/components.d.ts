@@ -83,6 +83,7 @@ export namespace Components {
     'value': string[];
   }
   interface HcCol {
+    'align': string;
     'flex': number;
     'span': number;
   }
@@ -226,6 +227,27 @@ export namespace Components {
     'value': string;
     'vibrate': number;
   }
+  interface HcList {
+    'ellipsis': string;
+    'filter': string;
+    'prefixSize': string;
+    'type': string;
+    'vertical': string;
+  }
+  interface HcListItem {
+    'date': string;
+    'ellipsis': string;
+    'filter': string;
+    'iconColor': string;
+    'key': string;
+    'prefixSize': string;
+    'prefixUrl': string;
+    'reverse': boolean;
+    'suffixIcon': string;
+    'titles': string;
+    'type': string;
+    'vertical': string;
+  }
   interface HcMask {
     'background': string;
     'init': (option: any) => Promise<HTMLHcMaskElement>;
@@ -309,6 +331,7 @@ export namespace Components {
   }
   interface HcRefresh_load {}
   interface HcRow {
+    'align': string;
     'justify': string;
   }
   interface HcSelection {
@@ -362,11 +385,33 @@ export namespace Components {
     'show': boolean;
     'showMore': boolean;
   }
-  interface HcTabbar {}
+  interface HcTabbar {
+    'activeColor': string;
+    'current': string;
+    'defaultColor': string;
+    'direction': string;
+    'iconSize': number;
+    'isDot': boolean;
+  }
+  interface HcTabbarItem {
+    'active': boolean;
+    'activeColor': string;
+    'activeIcon': string;
+    'background': string;
+    'badge': number;
+    'defaultColor': string;
+    'defaultIcon': string;
+    'iconSize': number;
+    'index': string;
+    'isDot': boolean;
+    'label': string;
+    'shape': string;
+  }
   interface HcTag {
     'color': string;
     'renderCss': () => Promise<void>;
     'shape': string;
+    'size': string;
     'type': string;
   }
   interface HcTextfield {}
@@ -550,6 +595,18 @@ declare global {
     new (): HTMLHcKeyboardElement;
   };
 
+  interface HTMLHcListElement extends Components.HcList, HTMLStencilElement {}
+  var HTMLHcListElement: {
+    prototype: HTMLHcListElement;
+    new (): HTMLHcListElement;
+  };
+
+  interface HTMLHcListItemElement extends Components.HcListItem, HTMLStencilElement {}
+  var HTMLHcListItemElement: {
+    prototype: HTMLHcListItemElement;
+    new (): HTMLHcListItemElement;
+  };
+
   interface HTMLHcMaskElement extends Components.HcMask, HTMLStencilElement {}
   var HTMLHcMaskElement: {
     prototype: HTMLHcMaskElement;
@@ -670,6 +727,12 @@ declare global {
     new (): HTMLHcTabbarElement;
   };
 
+  interface HTMLHcTabbarItemElement extends Components.HcTabbarItem, HTMLStencilElement {}
+  var HTMLHcTabbarItemElement: {
+    prototype: HTMLHcTabbarItemElement;
+    new (): HTMLHcTabbarItemElement;
+  };
+
   interface HTMLHcTagElement extends Components.HcTag, HTMLStencilElement {}
   var HTMLHcTagElement: {
     prototype: HTMLHcTagElement;
@@ -714,6 +777,8 @@ declare global {
     'hc-indexlist': HTMLHcIndexlistElement;
     'hc-input': HTMLHcInputElement;
     'hc-keyboard': HTMLHcKeyboardElement;
+    'hc-list': HTMLHcListElement;
+    'hc-list-item': HTMLHcListItemElement;
     'hc-mask': HTMLHcMaskElement;
     'hc-notify': HTMLHcNotifyElement;
     'hc-page': HTMLHcPageElement;
@@ -734,6 +799,7 @@ declare global {
     'hc-switch': HTMLHcSwitchElement;
     'hc-tab': HTMLHcTabElement;
     'hc-tabbar': HTMLHcTabbarElement;
+    'hc-tabbar-item': HTMLHcTabbarItemElement;
     'hc-tag': HTMLHcTagElement;
     'hc-textfield': HTMLHcTextfieldElement;
     'hc-toast': HTMLHcToastElement;
@@ -814,6 +880,7 @@ declare namespace LocalJSX {
     'value'?: string[];
   }
   interface HcCol {
+    'align'?: string;
     'flex'?: number;
     'span'?: number;
   }
@@ -949,6 +1016,27 @@ declare namespace LocalJSX {
     'value'?: string;
     'vibrate'?: number;
   }
+  interface HcList {
+    'ellipsis'?: string;
+    'filter'?: string;
+    'prefixSize'?: string;
+    'type'?: string;
+    'vertical'?: string;
+  }
+  interface HcListItem {
+    'date'?: string;
+    'ellipsis'?: string;
+    'filter'?: string;
+    'iconColor'?: string;
+    'key'?: string;
+    'prefixSize'?: string;
+    'prefixUrl'?: string;
+    'reverse'?: boolean;
+    'suffixIcon'?: string;
+    'titles'?: string;
+    'type'?: string;
+    'vertical'?: string;
+  }
   interface HcMask {
     'background'?: string;
     'maskClosable'?: boolean;
@@ -1015,6 +1103,7 @@ declare namespace LocalJSX {
   }
   interface HcRefresh_load {}
   interface HcRow {
+    'align'?: string;
     'justify'?: string;
   }
   interface HcSelection {
@@ -1066,10 +1155,34 @@ declare namespace LocalJSX {
     'show'?: boolean;
     'showMore'?: boolean;
   }
-  interface HcTabbar {}
+  interface HcTabbar {
+    'activeColor'?: string;
+    'current'?: string;
+    'defaultColor'?: string;
+    'direction'?: string;
+    'iconSize'?: number;
+    'isDot'?: boolean;
+    'onVchange'?: (event: CustomEvent<any>) => void;
+  }
+  interface HcTabbarItem {
+    'active'?: boolean;
+    'activeColor'?: string;
+    'activeIcon'?: string;
+    'background'?: string;
+    'badge'?: number;
+    'defaultColor'?: string;
+    'defaultIcon'?: string;
+    'iconSize'?: number;
+    'index'?: string;
+    'isDot'?: boolean;
+    'label'?: string;
+    'onVclick'?: (event: CustomEvent<any>) => void;
+    'shape'?: string;
+  }
   interface HcTag {
     'color'?: string;
     'shape'?: string;
+    'size'?: string;
     'type'?: string;
   }
   interface HcTextfield {}
@@ -1108,6 +1221,8 @@ declare namespace LocalJSX {
     'hc-indexlist': HcIndexlist;
     'hc-input': HcInput;
     'hc-keyboard': HcKeyboard;
+    'hc-list': HcList;
+    'hc-list-item': HcListItem;
     'hc-mask': HcMask;
     'hc-notify': HcNotify;
     'hc-page': HcPage;
@@ -1128,6 +1243,7 @@ declare namespace LocalJSX {
     'hc-switch': HcSwitch;
     'hc-tab': HcTab;
     'hc-tabbar': HcTabbar;
+    'hc-tabbar-item': HcTabbarItem;
     'hc-tag': HcTag;
     'hc-textfield': HcTextfield;
     'hc-toast': HcToast;
@@ -1166,6 +1282,8 @@ declare module "@stencil/core" {
       'hc-indexlist': LocalJSX.HcIndexlist & JSXBase.HTMLAttributes<HTMLHcIndexlistElement>;
       'hc-input': LocalJSX.HcInput & JSXBase.HTMLAttributes<HTMLHcInputElement>;
       'hc-keyboard': LocalJSX.HcKeyboard & JSXBase.HTMLAttributes<HTMLHcKeyboardElement>;
+      'hc-list': LocalJSX.HcList & JSXBase.HTMLAttributes<HTMLHcListElement>;
+      'hc-list-item': LocalJSX.HcListItem & JSXBase.HTMLAttributes<HTMLHcListItemElement>;
       'hc-mask': LocalJSX.HcMask & JSXBase.HTMLAttributes<HTMLHcMaskElement>;
       'hc-notify': LocalJSX.HcNotify & JSXBase.HTMLAttributes<HTMLHcNotifyElement>;
       'hc-page': LocalJSX.HcPage & JSXBase.HTMLAttributes<HTMLHcPageElement>;
@@ -1186,6 +1304,7 @@ declare module "@stencil/core" {
       'hc-switch': LocalJSX.HcSwitch & JSXBase.HTMLAttributes<HTMLHcSwitchElement>;
       'hc-tab': LocalJSX.HcTab & JSXBase.HTMLAttributes<HTMLHcTabElement>;
       'hc-tabbar': LocalJSX.HcTabbar & JSXBase.HTMLAttributes<HTMLHcTabbarElement>;
+      'hc-tabbar-item': LocalJSX.HcTabbarItem & JSXBase.HTMLAttributes<HTMLHcTabbarItemElement>;
       'hc-tag': LocalJSX.HcTag & JSXBase.HTMLAttributes<HTMLHcTagElement>;
       'hc-textfield': LocalJSX.HcTextfield & JSXBase.HTMLAttributes<HTMLHcTextfieldElement>;
       'hc-toast': LocalJSX.HcToast & JSXBase.HTMLAttributes<HTMLHcToastElement>;

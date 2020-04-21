@@ -4,9 +4,10 @@ const Row = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.justify = 'flex-start';
+        this.align = 'flex-start';
     }
     render() {
-        return (h(Host, { style: { justifyContent: this.justify } }, h("slot", null)));
+        return (h(Host, { style: { justifyContent: this.justify, alignItems: this.align } }, h("slot", null)));
     }
     static get style() { return ":host {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}"; }
 };

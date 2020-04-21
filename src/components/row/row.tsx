@@ -7,9 +7,10 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class Row {
   @Prop() justify: string = 'flex-start'
+  @Prop() align: string = 'flex-start'
   render() {
     return (
-      <Host style = {{justifyContent: this.justify}}>
+      <Host style = {{justifyContent: this.justify, alignItems: this.align}}>
         <slot></slot>
       </Host>
     );

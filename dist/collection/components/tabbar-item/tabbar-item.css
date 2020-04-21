@@ -1,0 +1,76 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.5rem;
+  color: #8c8c8c;
+  height: 2.4rem;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+:host .badge {
+  background: #e90000;
+  position: absolute;
+  font-size: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  padding: 0 0.25rem;
+  border-radius: 0.4rem;
+  height: 0.8rem;
+  min-width: 0.8rem;
+  box-sizing: border-box;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  z-index: 20;
+  transform: translate(50%, -10%);
+  margin: 0;
+}
+:host .icon {
+  display: inline-block;
+  position: relative;
+}
+:host .icon hc-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+:host .icon hc-image:last-child {
+  opacity: 0;
+}
+:host .label {
+  margin: 0;
+  margin-top: 0.1rem;
+  transition: 0.3s;
+}
+
+:host([active]) {
+  color: #2170D9;
+}
+:host([active]) .icon hc-image:first-child {
+  opacity: 0;
+}
+:host([active]) .icon hc-image:last-child {
+  opacity: 1;
+}
+
+:host([shape=circle]) {
+  flex: 0 auto;
+  width: 2.4rem;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-30%);
+}
+
+:host([is-dot=true]) .badge {
+  font-size: 0;
+  min-width: 0;
+  padding: 0;
+  height: 0.3rem;
+  width: 0.3rem;
+  transform: translate(100%, 0);
+}

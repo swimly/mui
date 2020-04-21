@@ -2,9 +2,10 @@ import { Host, h } from "@stencil/core";
 export class Col {
     constructor() {
         this.span = 24;
+        this.align = 'center';
     }
     render() {
-        return (h(Host, { style: this.flex ? { flex: `${this.flex}` } : { width: `${this.span / 24 * 100}%` } },
+        return (h(Host, { style: this.flex ? { flex: `${this.flex}`, textAlign: this.align } : { width: `${this.span / 24 * 100}%`, textAlign: this.align } },
             h("slot", null)));
     }
     static get is() { return "hc-col"; }
@@ -50,6 +51,24 @@ export class Col {
             },
             "attribute": "flex",
             "reflect": false
+        },
+        "align": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "align",
+            "reflect": false,
+            "defaultValue": "'center'"
         }
     }; }
     static get elementRef() { return "el"; }

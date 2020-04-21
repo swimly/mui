@@ -198,3 +198,15 @@
   transform: scale(0.5);
   transform-origin: 0 0;
 }
+
+:host([size=mini]) {
+  font-size: 0.6rem;
+  height: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+:host([size=small]) {
+  font-size: 0.6rem;
+  height: 1.3rem;
+  padding: 0 0.6rem;
+}

@@ -86,6 +86,23 @@ export class Tag {
             },
             "attribute": "color",
             "reflect": false
+        },
+        "size": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "size",
+            "reflect": false
         }
     }; }
     static get methods() { return {

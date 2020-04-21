@@ -10,7 +10,49 @@
   <hc-page titles="导航">
     <div class="panel">
       <h2>普通用法</h2>
-      <hc-tabbar></hc-tabbar>
+      <hc-tabbar current="1" icon-size="22">
+        <hc-tabbar-item label="首页" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="自主申报" default-icon="./assets/nav2.png" active-icon="./assets/nav2-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="客服" default-icon="./assets/nav3.png" active-icon="./assets/nav3-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+      </hc-tabbar>
+    </div>
+    <div class="panel">
+      <h2>通过名称匹配</h2>
+      <hc-tabbar current="shenbao" icon-size="22">
+        <hc-tabbar-item index="home" label="首页" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+        <hc-tabbar-item index="shenbao" label="自主申报" default-icon="./assets/nav2.png" active-icon="./assets/nav2-active.png"></hc-tabbar-item>
+        <hc-tabbar-item index="service" label="客服" default-icon="./assets/nav3.png" active-icon="./assets/nav3-active.png"></hc-tabbar-item>
+        <hc-tabbar-item index="mine" label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+      </hc-tabbar>
+    </div>
+    <div class="panel">
+      <h2>中间带加号</h2>
+      <hc-tabbar current="1" icon-size="22">
+        <hc-tabbar-item label="首页" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="自主申报" default-icon="./assets/nav2.png" active-icon="./assets/nav2-active.png"></hc-tabbar-item>
+        <hc-tabbar-item background="#2873D6" icon-size="28" index="add" shape="circle" default-icon="./assets/add.png" active-icon="./assets/add.png"></hc-tabbar-item>
+        <hc-tabbar-item label="客服" default-icon="./assets/nav3.png" active-icon="./assets/nav3-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+      </hc-tabbar>
+    </div>
+    <div class="panel">
+      <h2>徽标</h2>
+      <hc-tabbar current="1" icon-size="22">
+        <hc-tabbar-item label="首页" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+        <hc-tabbar-item badge="2" label="自主申报" default-icon="./assets/nav2.png" active-icon="./assets/nav2-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="客服" default-icon="./assets/nav3.png" active-icon="./assets/nav3-active.png"></hc-tabbar-item>
+        <hc-tabbar-item badge="1" label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+      </hc-tabbar>
+    </div>
+    <div class="panel">
+      <h2>点徽标</h2>
+      <hc-tabbar is-dot="true" current="1" icon-size="22">
+        <hc-tabbar-item label="首页" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+        <hc-tabbar-item badge="2" label="自主申报" default-icon="./assets/nav2.png" active-icon="./assets/nav2-active.png"></hc-tabbar-item>
+        <hc-tabbar-item label="客服" default-icon="./assets/nav3.png" active-icon="./assets/nav3-active.png"></hc-tabbar-item>
+        <hc-tabbar-item badge="1" label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+      </hc-tabbar>
     </div>
   </hc-page>
   <script type="module" src="../../www/build/mui.esm.js"></script>

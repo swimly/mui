@@ -4,9 +4,10 @@ const Col = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
         this.span = 24;
+        this.align = 'center';
     }
     render() {
-        return (h(Host, { style: this.flex ? { flex: `${this.flex}` } : { width: `${this.span / 24 * 100}%` } }, h("slot", null)));
+        return (h(Host, { style: this.flex ? { flex: `${this.flex}`, textAlign: this.align } : { width: `${this.span / 24 * 100}%`, textAlign: this.align } }, h("slot", null)));
     }
     get el() { return getElement(this); }
     static get style() { return ":host {\n  display: block;\n}"; }
