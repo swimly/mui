@@ -7,6 +7,8 @@ export class Drawer {
         this.maskClosable = true;
         this.mask = true;
         this.round = false;
+        this.full = false;
+        this.scroller = true;
     }
     visibleHandle(newValue) {
         if (newValue) {
@@ -53,10 +55,11 @@ export class Drawer {
         }
     }
     render() {
+        console.log(this.scroller);
         return (h(Host, null,
             this.mask ? h("div", { class: "hc-mask" }) : h("span", null),
-            h("div", { class: "hc-drawer" },
-                h("div", { class: "hc-drawer__content", style: { padding: `${this.padding}px` } },
+            h("div", { class: "hc-drawer", style: this.full ? { width: `100%`, height: `100%` } : {} },
+                h("div", { class: "hc-drawer__content", style: { padding: `${this.padding}px`, height: this.scroller ? 'auto' : '100%' } },
                     h("slot", null)))));
     }
     static get is() { return "hc-drawer"; }
@@ -192,6 +195,42 @@ export class Drawer {
             },
             "attribute": "padding",
             "reflect": false
+        },
+        "full": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "full",
+            "reflect": false,
+            "defaultValue": "false"
+        },
+        "scroller": {
+            "type": "boolean",
+            "mutable": false,
+            "complexType": {
+                "original": "boolean",
+                "resolved": "boolean",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "scroller",
+            "reflect": false,
+            "defaultValue": "true"
         }
     }; }
     static get methods() { return {

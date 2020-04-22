@@ -28,9 +28,11 @@ export class Button {
    */
   @Prop() icon: string;
   @Prop() disabled: boolean = false;
+  // @Prop() onclick: Function;
   @Element() el:HTMLElement;
   @Event() vclick: EventEmitter;
   componentDidLoad () {
+    // console.log(this.onclick())
     if (!this.disabled) {
       this.el.addEventListener('click', (e) => {
         this.el.setAttribute('active', 'true')

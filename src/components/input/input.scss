@@ -5,7 +5,7 @@
     display:flex;
     flex-direction: row;
     align-items:center;
-    @include border_1px('default', $lightgray, 0);
+    @include border_1px('default', $--lightgray-color, 0);
     padding:0 0.5rem;
     height:2.2rem;
     &.textarea{
@@ -27,7 +27,7 @@
     }
     &__count{
       font-size:$h6;
-      color:$lightgray;
+      color:$--lightgray-color;
     }
     &__notice{
       display:flex;
@@ -35,7 +35,7 @@
       align-items: center;
     }
     &__clear{
-      color:$lightgray;
+      color:$--lightgray-color;
       position: relative;
       z-index:100;
       display:none;
@@ -45,14 +45,14 @@
       display:flex;
       flex-direction: row;
       align-items: center;
-      color:$normal;
+      color:$--secondary-color;
     }
     &__suffix{
       margin-left:0.5rem;
       display:flex;
       flex-direction: row;
       align-items: center;
-      color:$normal;
+      color:$--secondary-color;
     }
     &__core{
       flex:1;
@@ -67,10 +67,10 @@
       margin:0;
       color:inherit;
       z-index:99;
-      caret-color: $primary;
+      caret-color: $--primary-color;
       font-family: inherit;
       &::-webkit-input-placeholder{
-        color:$gray;
+        color:$--main-color;
         line-height: normal;
       }
     }
@@ -78,69 +78,69 @@
 }
 :host([shape="conner"]){
   .hc-input{
-    @include border_1px('default', $lightgray, $radius * 2);
+    @include border_1px('default', $--lightgray-color, $radius * 2);
   }
 }
 :host([shape="rounder"]){
   .hc-input{
-    @include border_1px('default', $lightgray, 2.4rem);
+    @include border_1px('default', $--lightgray-color, 2.4rem);
   }
 }
 :host([shape="light"]){
   .hc-input{
-    @include border_1px('default', $white, 0);
+    @include border_1px('default', $--white-color, 0);
     padding:0;
     height:auto;
   }
 }
 :host([shape="fill"]){
   .hc-input{
-    @include border_1px('default', $white, 0);
-    background:$light;
+    @include border_1px('default', $--white-color, 0);
+    background:$--lime-color;
   }
 }
 :host([shape="fill"][error]){
   .hc-input{
-    @include border_1px('default', rgba($danger, 0.3), 0);
-    background:rgba($danger, 0.03);
+    @include border_1px('default', rgba($--danger-color, 0.3), 0);
+    background:rgba($--danger-color, 0.03);
     &__core{
-      caret-color: $danger;
+      caret-color: $--danger-color;
       &::-webkit-input-placeholder{
-        color:rgba($danger, 0.3);
+        color:rgba($--danger-color, 0.3);
       }
     }
   }
 }
 :host([shape="line"]){
   .hc-input{
-    @include border_1px('bottom', $lightgray, 0);
+    @include border_1px('bottom', $--lightgray-color, 0);
   }
 }
 :host([error]){
   .hc-input{
-    @include border_1px('default', $danger, 0);
+    @include border_1px('default', $--danger-color, 0);
     &__core{
-      caret-color: $danger;
+      caret-color: $--danger-color;
     }
   }
   &:after{
     content:attr(error);
     font-size:$h6;
-    color:$danger;
+    color:$--danger-color;
   }
 }
 
 :host([warning]){
   .hc-input{
-    @include border_1px('default', $warning, 0);
+    @include border_1px('default', $--warning-color, 0);
     &__core{
-      caret-color: $warning;
+      caret-color: $--warning-color;
     }
   }
   &:after{
     content:attr(warning);
     font-size:$h6;
-    color:$warning;
+    color:$--warning-color;
   }
 }
 :host([align="right"]){

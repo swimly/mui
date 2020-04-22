@@ -12,10 +12,14 @@ export class Page {
     }
     componentDidLoad() {
         this.renderStyle();
-        this.el.shadowRoot.querySelector('section').addEventListener('scroll', (e) => {
+        var section = this.el.shadowRoot.querySelector('section');
+        section.addEventListener('scroll', () => {
             this.scrolldistance = Math.round(this.el.shadowRoot.querySelector('section').scrollTop);
             this.el.setAttribute('scrolldistance', `${this.scrolldistance}`);
-            this.vscroll.emit(e);
+            this.vscroll.emit({
+                scrollTop: this.scrolldistance,
+                offsetTop: section.offsetTop
+            });
         });
     }
     // 初始化样式
@@ -75,7 +79,8 @@ export class Page {
                     h("hc-icon", { size: 28, name: item.icon }),
                     h("span", null, item.label)))) : h("span", null))),
             h("section", null,
-                h("slot", null))));
+                h("slot", null)),
+            h("slot", { name: "footer" })));
     }
     static get is() { return "hc-page"; }
     static get encapsulation() { return "shadow"; }

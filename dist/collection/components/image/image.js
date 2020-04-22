@@ -3,7 +3,7 @@ export class Image {
     constructor() {
         this.width = 200;
         this.height = 200;
-        this.lazy = false;
+        this.lazy = true;
         this.status = 0;
         this.fit = 'cover';
     }
@@ -127,7 +127,7 @@ export class Image {
             },
             "attribute": "lazy",
             "reflect": false,
-            "defaultValue": "false"
+            "defaultValue": "true"
         },
         "status": {
             "type": "number",

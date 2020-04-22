@@ -14,13 +14,13 @@
     width:100%;
     height:100%;
     z-index:10;
-    background:$light;
+    background:$--lime-color;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content: center;
     font-size:0.7rem;
-    color:$normal;
+    color:$--secondary-color;
   }
   .error{
     position: absolute;
@@ -35,8 +35,8 @@
     flex-direction: column;
     align-items:center;
     justify-content: center;
-    background:$light;
-    color:$normal;
+    background:$--lime-color;
+    color:$--secondary-color;
   }
 }
 

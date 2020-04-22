@@ -11,7 +11,7 @@ const DropdownItem = class {
             return (h("p", { class: "item", id: index }, item.label));
         }))));
     }
-    static get style() { return ":host {\n  display: block;\n  -ms-flex: 1;\n  flex: 1;\n}\n:host .head {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-align: center;\n  align-items: center;\n  height: 2.4rem;\n  background: #fff;\n}\n:host .head .label {\n  font-weight: normal;\n  font-size: 0.8rem;\n  color: #262626;\n  margin: 0;\n}\n:host .content {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 2.4rem;\n  background: #fff;\n}"; }
+    static get style() { return ":host {\n  display: block;\n  flex: 1;\n}\n:host .head {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  height: 2.4rem;\n  background: #fff;\n}\n:host .head .label {\n  font-weight: normal;\n  font-size: 0.8rem;\n  color: #262626;\n  margin: 0;\n}\n:host .content {\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 2.4rem;\n  background: #fff;\n}"; }
 };
 
 export { DropdownItem as hc_dropdown_item };

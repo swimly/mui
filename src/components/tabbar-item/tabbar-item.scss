@@ -3,13 +3,13 @@
   flex-direction: column;
   align-items:center;
   font-size:0.5rem;
-  color:$normal;
+  color:$--secondary-color;
   height:2.4rem;
   justify-content: center;
   flex:1;
   position: relative;
   .badge{
-    background:$danger;
+    background:$--danger-color;
     position: absolute;
     font-size:0.5rem;
     display:flex;
@@ -31,6 +31,7 @@
   .icon{
     display:inline-block;
     position: relative;
+    overflow:hidden;
     hc-image{
       position: absolute;
       top:0;
@@ -48,7 +49,7 @@
   }
 }
 :host([active]){
-  color:$primary;
+  color:$--primary-color;
   .icon{
     hc-image{
       &:first-child{

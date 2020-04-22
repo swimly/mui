@@ -9,7 +9,7 @@ const Row = class {
     render() {
         return (h(Host, { style: { justifyContent: this.justify, alignItems: this.align } }, h("slot", null)));
     }
-    static get style() { return ":host {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -ms-flex-wrap: wrap;\n  flex-wrap: wrap;\n}"; }
+    static get style() { return ":host {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n}"; }
 };
 
 export { Row as hc_row };

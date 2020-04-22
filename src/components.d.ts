@@ -80,7 +80,7 @@ export namespace Components {
     'value': any;
   }
   interface HcCheckboxGroup {
-    'value': string[];
+    'value': any;
   }
   interface HcCol {
     'align': string;
@@ -137,11 +137,13 @@ export namespace Components {
   interface HcDrawer {
     'destory': () => Promise<void>;
     'direction': string;
+    'full': boolean;
     'init': () => Promise<void>;
     'mask': boolean;
     'maskClosable': boolean;
     'padding': number;
     'round': boolean;
+    'scroller': boolean;
     'transparent': boolean;
     'visible': boolean;
   }
@@ -227,6 +229,11 @@ export namespace Components {
     'value': string;
     'vibrate': number;
   }
+  interface HcLink {
+    'component': string;
+    'titles': string;
+    'to': string;
+  }
   interface HcList {
     'ellipsis': string;
     'filter': string;
@@ -239,7 +246,7 @@ export namespace Components {
     'ellipsis': string;
     'filter': string;
     'iconColor': string;
-    'key': string;
+    'keys': string;
     'prefixSize': string;
     'prefixUrl': string;
     'reverse': boolean;
@@ -290,6 +297,11 @@ export namespace Components {
     'scrolldistance': number;
     'titles': string;
   }
+  interface HcPanel {
+    'desc': string;
+    'status': string;
+    'titles': string;
+  }
   interface HcPicker {
     'cancelLabel': string;
     'confirmLabel': string;
@@ -334,6 +346,17 @@ export namespace Components {
     'align': string;
     'justify': string;
   }
+  interface HcSection {
+    'closeLabel': string;
+    'color': string;
+    'fontSize': string;
+    'indent': number;
+    'lineHeight': number;
+    'maxLength': number;
+    'open': boolean;
+    'openLabel': string;
+    'transition': boolean;
+  }
   interface HcSelection {
     'data': string;
     'round': boolean;
@@ -343,6 +366,56 @@ export namespace Components {
   interface HcSignature {
     'backgroundColor': string;
     'penColor': string;
+  }
+  interface HcSkeleton {
+    /**
+    * 是否开启动画
+    */
+    'animates': boolean;
+    /**
+    * 头像
+    */
+    'avatar': boolean;
+    /**
+    * 头像位置
+    */
+    'avatarPosition': 'left' | 'right';
+    /**
+    * 头像形状（round圆形，square方形）
+    */
+    'avatarShape': 'round' | 'square';
+    /**
+    * 头像大小（宽高）
+    */
+    'avatarSize': number;
+    /**
+    * banner占位，图片占位
+    */
+    'banner': boolean;
+    /**
+    * loading为false，显示子组件
+    */
+    'loading': boolean;
+    /**
+    * 导航入口
+    */
+    'nav': boolean;
+    /**
+    * 导航入口，列数
+    */
+    'navCol': number;
+    /**
+    * 导航入口，行数
+    */
+    'navRow': number;
+    /**
+    * 段落，行数
+    */
+    'row': number;
+    /**
+    * 标题
+    */
+    'titles': boolean;
   }
   interface HcSlider {
     'max': number;
@@ -355,6 +428,12 @@ export namespace Components {
     'min': number;
     'step': number;
     'value': number;
+  }
+  interface HcSticky {
+    /**
+    * 设置吸顶距离（组件在吸顶时与顶部的距离）
+    */
+    'offset': number;
   }
   interface HcSwiper {
     'autoplay': boolean;
@@ -595,6 +674,12 @@ declare global {
     new (): HTMLHcKeyboardElement;
   };
 
+  interface HTMLHcLinkElement extends Components.HcLink, HTMLStencilElement {}
+  var HTMLHcLinkElement: {
+    prototype: HTMLHcLinkElement;
+    new (): HTMLHcLinkElement;
+  };
+
   interface HTMLHcListElement extends Components.HcList, HTMLStencilElement {}
   var HTMLHcListElement: {
     prototype: HTMLHcListElement;
@@ -623,6 +708,12 @@ declare global {
   var HTMLHcPageElement: {
     prototype: HTMLHcPageElement;
     new (): HTMLHcPageElement;
+  };
+
+  interface HTMLHcPanelElement extends Components.HcPanel, HTMLStencilElement {}
+  var HTMLHcPanelElement: {
+    prototype: HTMLHcPanelElement;
+    new (): HTMLHcPanelElement;
   };
 
   interface HTMLHcPickerElement extends Components.HcPicker, HTMLStencilElement {}
@@ -673,6 +764,12 @@ declare global {
     new (): HTMLHcRowElement;
   };
 
+  interface HTMLHcSectionElement extends Components.HcSection, HTMLStencilElement {}
+  var HTMLHcSectionElement: {
+    prototype: HTMLHcSectionElement;
+    new (): HTMLHcSectionElement;
+  };
+
   interface HTMLHcSelectionElement extends Components.HcSelection, HTMLStencilElement {}
   var HTMLHcSelectionElement: {
     prototype: HTMLHcSelectionElement;
@@ -685,6 +782,12 @@ declare global {
     new (): HTMLHcSignatureElement;
   };
 
+  interface HTMLHcSkeletonElement extends Components.HcSkeleton, HTMLStencilElement {}
+  var HTMLHcSkeletonElement: {
+    prototype: HTMLHcSkeletonElement;
+    new (): HTMLHcSkeletonElement;
+  };
+
   interface HTMLHcSliderElement extends Components.HcSlider, HTMLStencilElement {}
   var HTMLHcSliderElement: {
     prototype: HTMLHcSliderElement;
@@ -695,6 +798,12 @@ declare global {
   var HTMLHcStepperElement: {
     prototype: HTMLHcStepperElement;
     new (): HTMLHcStepperElement;
+  };
+
+  interface HTMLHcStickyElement extends Components.HcSticky, HTMLStencilElement {}
+  var HTMLHcStickyElement: {
+    prototype: HTMLHcStickyElement;
+    new (): HTMLHcStickyElement;
   };
 
   interface HTMLHcSwiperElement extends Components.HcSwiper, HTMLStencilElement {}
@@ -777,11 +886,13 @@ declare global {
     'hc-indexlist': HTMLHcIndexlistElement;
     'hc-input': HTMLHcInputElement;
     'hc-keyboard': HTMLHcKeyboardElement;
+    'hc-link': HTMLHcLinkElement;
     'hc-list': HTMLHcListElement;
     'hc-list-item': HTMLHcListItemElement;
     'hc-mask': HTMLHcMaskElement;
     'hc-notify': HTMLHcNotifyElement;
     'hc-page': HTMLHcPageElement;
+    'hc-panel': HTMLHcPanelElement;
     'hc-picker': HTMLHcPickerElement;
     'hc-popover': HTMLHcPopoverElement;
     'hc-progress': HTMLHcProgressElement;
@@ -790,10 +901,13 @@ declare global {
     'hc-radio-group': HTMLHcRadioGroupElement;
     'hc-refresh_load': HTMLHcRefresh_loadElement;
     'hc-row': HTMLHcRowElement;
+    'hc-section': HTMLHcSectionElement;
     'hc-selection': HTMLHcSelectionElement;
     'hc-signature': HTMLHcSignatureElement;
+    'hc-skeleton': HTMLHcSkeletonElement;
     'hc-slider': HTMLHcSliderElement;
     'hc-stepper': HTMLHcStepperElement;
+    'hc-sticky': HTMLHcStickyElement;
     'hc-swiper': HTMLHcSwiperElement;
     'hc-swiper-item': HTMLHcSwiperItemElement;
     'hc-switch': HTMLHcSwitchElement;
@@ -877,7 +991,7 @@ declare namespace LocalJSX {
   }
   interface HcCheckboxGroup {
     'onVichange'?: (event: CustomEvent<any>) => void;
-    'value'?: string[];
+    'value'?: any;
   }
   interface HcCol {
     'align'?: string;
@@ -929,14 +1043,18 @@ declare namespace LocalJSX {
   }
   interface HcDrawer {
     'direction'?: string;
+    'full'?: boolean;
     'mask'?: boolean;
     'maskClosable'?: boolean;
     'padding'?: number;
     'round'?: boolean;
+    'scroller'?: boolean;
     'transparent'?: boolean;
     'visible'?: boolean;
   }
-  interface HcDropdown {}
+  interface HcDropdown {
+    'onConfirm'?: (event: CustomEvent<any>) => void;
+  }
   interface HcDropdownItem {
     'label'?: string;
     'option'?: any;
@@ -1016,6 +1134,11 @@ declare namespace LocalJSX {
     'value'?: string;
     'vibrate'?: number;
   }
+  interface HcLink {
+    'component'?: string;
+    'titles'?: string;
+    'to'?: string;
+  }
   interface HcList {
     'ellipsis'?: string;
     'filter'?: string;
@@ -1028,7 +1151,7 @@ declare namespace LocalJSX {
     'ellipsis'?: string;
     'filter'?: string;
     'iconColor'?: string;
-    'key'?: string;
+    'keys'?: string;
     'prefixSize'?: string;
     'prefixUrl'?: string;
     'reverse'?: boolean;
@@ -1065,6 +1188,11 @@ declare namespace LocalJSX {
     'padding'?: string;
     'rightButtons'?: string;
     'scrolldistance'?: number;
+    'titles'?: string;
+  }
+  interface HcPanel {
+    'desc'?: string;
+    'status'?: string;
     'titles'?: string;
   }
   interface HcPicker {
@@ -1106,6 +1234,17 @@ declare namespace LocalJSX {
     'align'?: string;
     'justify'?: string;
   }
+  interface HcSection {
+    'closeLabel'?: string;
+    'color'?: string;
+    'fontSize'?: string;
+    'indent'?: number;
+    'lineHeight'?: number;
+    'maxLength'?: number;
+    'open'?: boolean;
+    'openLabel'?: string;
+    'transition'?: boolean;
+  }
   interface HcSelection {
     'data'?: string;
     'round'?: boolean;
@@ -1115,6 +1254,56 @@ declare namespace LocalJSX {
   interface HcSignature {
     'backgroundColor'?: string;
     'penColor'?: string;
+  }
+  interface HcSkeleton {
+    /**
+    * 是否开启动画
+    */
+    'animates'?: boolean;
+    /**
+    * 头像
+    */
+    'avatar'?: boolean;
+    /**
+    * 头像位置
+    */
+    'avatarPosition'?: 'left' | 'right';
+    /**
+    * 头像形状（round圆形，square方形）
+    */
+    'avatarShape'?: 'round' | 'square';
+    /**
+    * 头像大小（宽高）
+    */
+    'avatarSize'?: number;
+    /**
+    * banner占位，图片占位
+    */
+    'banner'?: boolean;
+    /**
+    * loading为false，显示子组件
+    */
+    'loading'?: boolean;
+    /**
+    * 导航入口
+    */
+    'nav'?: boolean;
+    /**
+    * 导航入口，列数
+    */
+    'navCol'?: number;
+    /**
+    * 导航入口，行数
+    */
+    'navRow'?: number;
+    /**
+    * 段落，行数
+    */
+    'row'?: number;
+    /**
+    * 标题
+    */
+    'titles'?: boolean;
   }
   interface HcSlider {
     'max'?: number;
@@ -1128,6 +1317,12 @@ declare namespace LocalJSX {
     'min'?: number;
     'step'?: number;
     'value'?: number;
+  }
+  interface HcSticky {
+    /**
+    * 设置吸顶距离（组件在吸顶时与顶部的距离）
+    */
+    'offset'?: number;
   }
   interface HcSwiper {
     'autoplay'?: boolean;
@@ -1221,11 +1416,13 @@ declare namespace LocalJSX {
     'hc-indexlist': HcIndexlist;
     'hc-input': HcInput;
     'hc-keyboard': HcKeyboard;
+    'hc-link': HcLink;
     'hc-list': HcList;
     'hc-list-item': HcListItem;
     'hc-mask': HcMask;
     'hc-notify': HcNotify;
     'hc-page': HcPage;
+    'hc-panel': HcPanel;
     'hc-picker': HcPicker;
     'hc-popover': HcPopover;
     'hc-progress': HcProgress;
@@ -1234,10 +1431,13 @@ declare namespace LocalJSX {
     'hc-radio-group': HcRadioGroup;
     'hc-refresh_load': HcRefresh_load;
     'hc-row': HcRow;
+    'hc-section': HcSection;
     'hc-selection': HcSelection;
     'hc-signature': HcSignature;
+    'hc-skeleton': HcSkeleton;
     'hc-slider': HcSlider;
     'hc-stepper': HcStepper;
+    'hc-sticky': HcSticky;
     'hc-swiper': HcSwiper;
     'hc-swiper-item': HcSwiperItem;
     'hc-switch': HcSwitch;
@@ -1282,11 +1482,13 @@ declare module "@stencil/core" {
       'hc-indexlist': LocalJSX.HcIndexlist & JSXBase.HTMLAttributes<HTMLHcIndexlistElement>;
       'hc-input': LocalJSX.HcInput & JSXBase.HTMLAttributes<HTMLHcInputElement>;
       'hc-keyboard': LocalJSX.HcKeyboard & JSXBase.HTMLAttributes<HTMLHcKeyboardElement>;
+      'hc-link': LocalJSX.HcLink & JSXBase.HTMLAttributes<HTMLHcLinkElement>;
       'hc-list': LocalJSX.HcList & JSXBase.HTMLAttributes<HTMLHcListElement>;
       'hc-list-item': LocalJSX.HcListItem & JSXBase.HTMLAttributes<HTMLHcListItemElement>;
       'hc-mask': LocalJSX.HcMask & JSXBase.HTMLAttributes<HTMLHcMaskElement>;
       'hc-notify': LocalJSX.HcNotify & JSXBase.HTMLAttributes<HTMLHcNotifyElement>;
       'hc-page': LocalJSX.HcPage & JSXBase.HTMLAttributes<HTMLHcPageElement>;
+      'hc-panel': LocalJSX.HcPanel & JSXBase.HTMLAttributes<HTMLHcPanelElement>;
       'hc-picker': LocalJSX.HcPicker & JSXBase.HTMLAttributes<HTMLHcPickerElement>;
       'hc-popover': LocalJSX.HcPopover & JSXBase.HTMLAttributes<HTMLHcPopoverElement>;
       'hc-progress': LocalJSX.HcProgress & JSXBase.HTMLAttributes<HTMLHcProgressElement>;
@@ -1295,10 +1497,13 @@ declare module "@stencil/core" {
       'hc-radio-group': LocalJSX.HcRadioGroup & JSXBase.HTMLAttributes<HTMLHcRadioGroupElement>;
       'hc-refresh_load': LocalJSX.HcRefresh_load & JSXBase.HTMLAttributes<HTMLHcRefresh_loadElement>;
       'hc-row': LocalJSX.HcRow & JSXBase.HTMLAttributes<HTMLHcRowElement>;
+      'hc-section': LocalJSX.HcSection & JSXBase.HTMLAttributes<HTMLHcSectionElement>;
       'hc-selection': LocalJSX.HcSelection & JSXBase.HTMLAttributes<HTMLHcSelectionElement>;
       'hc-signature': LocalJSX.HcSignature & JSXBase.HTMLAttributes<HTMLHcSignatureElement>;
+      'hc-skeleton': LocalJSX.HcSkeleton & JSXBase.HTMLAttributes<HTMLHcSkeletonElement>;
       'hc-slider': LocalJSX.HcSlider & JSXBase.HTMLAttributes<HTMLHcSliderElement>;
       'hc-stepper': LocalJSX.HcStepper & JSXBase.HTMLAttributes<HTMLHcStepperElement>;
+      'hc-sticky': LocalJSX.HcSticky & JSXBase.HTMLAttributes<HTMLHcStickyElement>;
       'hc-swiper': LocalJSX.HcSwiper & JSXBase.HTMLAttributes<HTMLHcSwiperElement>;
       'hc-swiper-item': LocalJSX.HcSwiperItem & JSXBase.HTMLAttributes<HTMLHcSwiperItemElement>;
       'hc-switch': LocalJSX.HcSwitch & JSXBase.HTMLAttributes<HTMLHcSwitchElement>;

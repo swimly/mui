@@ -10,7 +10,7 @@
     position: absolute;
     left:0;
     bottom:0;
-    background:$lightgray;
+    background:$--lightgray-color;
     height:1px;
     transform: scaleY(0.5);
   }
@@ -22,7 +22,7 @@
       justify-content: center;
       width:0.8rem;
       height:0.8rem;
-      background:$primary;
+      background:$--primary-color;
       color:#fff;
       border-radius:50%;
       font-size:0.5rem;
@@ -36,19 +36,19 @@
     flex:1;
     .title{
       font-size:0.8rem;
-      color:$black;
+      color:$--black-color;
       margin:0;
       font-weight: normal;
       line-height:1.4;
       margin-bottom:0.4rem;
       .filter{
-        color:$primary;
+        color:$--primary-color;
         margin:0 0.1rem;
       }
     }
     .date{
       font-size:0.7rem;
-      color:$normal;
+      color:$--secondary-color;
     }
   }
 }

@@ -25,9 +25,9 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     }
     .hc-switch:checked {
-        border-color: $primary;
-        box-shadow: $primary 0 0 0 0.8rem inset;
-        background-color: $primary;
+        border-color: $--primary-color;
+        box-shadow: $--primary-color 0 0 0 0.8rem inset;
+        background-color: $--primary-color;
     }
     .hc-switch:checked:before {
         left: 1rem;
@@ -40,7 +40,7 @@
     }
     .hc-switch.hc-switch-animbg:checked {
         box-shadow: #dfdfdf 0 0 0 0 inset;
-        background-color: $primary;
+        background-color: $--primary-color;
         transition: border-color 0.4s, background-color ease 0.4s;
     }
     .hc-switch.hc-switch-animbg:checked:before {
@@ -53,8 +53,8 @@
         transition: left 0.3s;
     }
     .hc-switch.hc-switch-anim:checked {
-        box-shadow: $primary 0 0 0 0.8rem inset;
-        background-color: $primary;
+        box-shadow: $--primary-color 0 0 0 0.8rem inset;
+        background-color: $--primary-color;
         transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
     }
     .hc-switch.hc-switch-anim:checked:before {

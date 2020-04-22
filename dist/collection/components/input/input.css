@@ -86,7 +86,7 @@
   font-family: inherit;
 }
 :host .hc-input__core::-webkit-input-placeholder {
-  color: #666;
+  color: #f5f5f5;
   line-height: normal;
 }
 

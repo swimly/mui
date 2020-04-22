@@ -1,16 +1,13 @@
 :host {
-  position:fixed;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
+  height:100%;
+  width:100%;
   display:-webkit-box;
   display:flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
   .hc-header{
-    background-color:$base;
+    background-color:$--default-color;
     height:2.4rem;
     display:-webkit-box;
     display:flex;
@@ -19,9 +16,9 @@
             flex-direction: row;
     -webkit-box-align: center;
             align-items: center;
-    color:$white;
+    color:$--white-color;
     padding:0 0.5rem;
-    box-shadow: 0 1px 1px rgba($lightgray, 0.4);
+    box-shadow: 0 1px 1px rgba($--lightgray-color, 0.4);
     &__title{
       font-size:$h4;
       color:inherit;
@@ -69,6 +66,7 @@
     font-size:0.8rem;
     box-sizing: border-box;
     position: relative;
+    background-color: $--main-color;
     slot{
         display:block;
     }

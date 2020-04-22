@@ -22,7 +22,7 @@
         color:#fff;
       }
       &.active{
-        color:$primary;
+        color:$--primary-color;
         hc-icon{
           color:inherit;
         }
@@ -36,8 +36,8 @@
     align-items:center;
     .button{
       font-size:$h5;
-      color:$black;
-      background-color:$graybg;
+      color:$--black-color;
+      background-color:$--main-color;
       flex:1;
       height:2.4rem;
       margin:0;
@@ -48,11 +48,11 @@
       border-radius:1.2rem;
       &:last-child{
         margin-left:0.5rem;
-        color:$primary;
+        color:$--primary-color;
       }
       &:first-child{
         margin-right:0.5rem;
-        color:$black;
+        color:$--black-color;
       }
     }
   }

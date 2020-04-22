@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>骨架屏</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    body{background:#fff;}
+    .list{display:flex;padding:0 20px;margin-bottom:30px;}
+    .list div{flex:1;}
+    .list h2{margin:0;font-size:18px;color:#333;margin-bottom:10px;}
+    .list p{margin:5px 0;font-size:14px;color:#666;}
+  </style>
+
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</head>
+<body>
+  <hc-page titles="骨架屏">
+    <div class="panel">
+      <hc-button id="button" size="small">加载完成，显示内容</hc-button>
+    </div>
+    <div class="panel">
+      <h2>普通</h2>
+      <hc-skeleton id="s1">
+        <div class="list">
+          <div>
+            <h2>标题占位图</h2>
+            <p>段落占位图</p>
+            <p>段落占位图宽度，可传数组来设置每一行的宽度</p>
+          </div>
+        </div>
+      </hc-skeleton>
+    </div>
+    <div class="panel">
+      <h2></h2>
+      <hc-skeleton id="s2">
+        <div class="list">
+          <img src="assets/img.png" alt="" style="width:40px;height:40px;border-radius:100%;margin-right:10px;">
+          <div>
+            <h2>标题占位图</h2>
+            <p>段落占位图</p>
+            <p>段落占位图宽度，可传数组来设置每一行的宽度</p>
+          </div>
+        </div>
+      </hc-skeleton>
+    </div>
+    <div class="panel">
+      <h2></h2>
+      <hc-skeleton id="s3">
+        <div class="list">
+          <div>
+            <h2>标题占位图</h2>
+            <p>段落占位图</p>
+            <p>段落占位图宽度，可传数组来设置每一行的宽度</p>
+          </div>
+          <img src="assets/img.png" alt="" style="width:100px;height:80px;">
+        </div>
+      </hc-skeleton>
+    </div>
+    <div class="panel">
+      <h2></h2>
+      <hc-skeleton id="s4"></hc-skeleton>
+      <hc-skeleton id="s5"></hc-skeleton>
+    </div>
+  </hc-page>
+  <script>
+    // 标题，段落
+    var s1 = document.querySelector('#s1')
+    s1.row = 2
+    s1.title = true
+
+    // 头像，标题，段落
+    var s2 = document.querySelector('#s2')
+    s2.row = 2
+    s2.title = true
+    s2.avatar = true
+
+    // 标题，段落，图片
+    var s3 = document.querySelector('#s3')
+    s3.row = 2
+    s3.title = true
+    s3.avatar = true
+    s3.avatarShape = 'square'
+    s3.avatarSize = 100
+    s3.avatarPosition = 'right'
+
+    // 导航入口列表
+    var s4 = document.querySelector('#s4')
+    s4.nav = true
+    s4.navRow = 2
+    s4.navCol = 4
+
+    // banner占位
+    var s5 = document.querySelector('#s5')
+    s5.banner = true
+
+    var button = document.querySelector('#button')
+    button.addEventListener('click', () => {
+      s1.loading = false
+      s2.loading = false
+      s3.loading = false
+    })
+  </script>
+  
+  
+</body>
+</html>

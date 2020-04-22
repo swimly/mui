@@ -14,12 +14,12 @@
     justify-content: center;
     flex:1;
     .key{
-      background:$white;
+      background:$--white-color;
       width:1.6rem;
       text-align:center;
       margin:0.15rem;
       font-size:$h6;
-      color:$black;
+      color:$--black-color;
       display:flex;
       flex-direction: row;
       align-items:center;
@@ -32,8 +32,8 @@
       &.button{
         background-color:#D0D1D5;
         &.active{
-          background:$primary;
-          color:$white;
+          background:$--primary-color;
+          color:$--white-color;
         }
       }
       &:active{

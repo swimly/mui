@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>面板</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+<body>
+  <hc-page titles="面板">
+    <hc-panel>
+      默认面板
+    </hc-panel>
+    <hc-panel titles="带标题">
+    </hc-panel>
+    <hc-panel titles="带描述" desc="似乎上面的内容偏离了我们今天要聊的主题，大家不用着急">
+    </hc-panel>
+    <hc-panel titles="带按钮" status="[{label: '更多', icon: 'double-arro-right'}]">
+    </hc-panel>
+    <hc-panel titles="带按钮" status="[{label: '编辑'}, {label: '删除'}]">
+    </hc-panel>
+    <hc-panel titles="自定义按钮颜色" status="[{label: '编辑', color: '#8c8c8c'}, {label: '删除'}]">
+    </hc-panel>
+  </hc-page>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</body>
+</html>

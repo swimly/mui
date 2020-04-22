@@ -12,7 +12,7 @@
     position: absolute;
     bottom:0;
     left:0;
-    background:$lightgray;
+    background:$--lightgray-color;
     transform: scaleY(0.5);
   }
   *{
@@ -23,18 +23,18 @@
   }
   .label{
     flex:1;
-    color:$black;
+    color:$--black-color;
     h2{
 
     }
     p{
       font-size:$h6;
-      color:$normal;
+      color:$--secondary-color;
     }
   }
   .value{
     text-align:right;
-    color:$gray;
+    color:$--main-color;
   }
 }
 :host([middle]) {

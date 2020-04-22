@@ -32,6 +32,7 @@
 :host .icon {
   display: inline-block;
   position: relative;
+  overflow: hidden;
 }
 :host .icon hc-image {
   position: absolute;

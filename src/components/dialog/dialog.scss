@@ -22,7 +22,7 @@
     transition:0.3s;
     &__countdown{
       font-size:$h6;
-      color:$normal;
+      color:$--secondary-color;
       margin:0;
       position: absolute;
       right:1rem;
@@ -31,7 +31,7 @@
     &__title{
       font-size:$h3;
       font-weight:normal;
-      color:$black;
+      color:$--black-color;
       margin:0;
       text-align:center;
       &:not(:empty){
@@ -40,12 +40,12 @@
     }
     &__content{
       font-size:$h5;
-      color:$black;
+      color:$--black-color;
     }
     &__footer{
       display:flex;
       flex-direction: row;
-      @include border_1px('top', $lightgray, 0);
+      @include border_1px('top', $--lightgray-color, 0);
       margin:0 -1rem -1rem -1rem;
       &:not(:empty){
         margin-top:1rem;
@@ -60,11 +60,11 @@
         margin:0;
         height:2.4rem;
         &:not(:first-child){
-          @include border_1px('left', $lightgray, 0);
-          color:$black;
+          @include border_1px('left', $--lightgray-color, 0);
+          color:$--black-color;
         }
         &:last-child{
-          color:$primary;
+          color:$--primary-color;
         }
       }
     }

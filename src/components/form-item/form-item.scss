@@ -3,9 +3,9 @@
   flex-direction:row;
   align-items:center;
   font-size:0.8rem;
-  color:$black;
+  color:$--black-color;
   padding:0.8rem 0;
-  @include border_1px('bottom', $lightgray, 0);
+  @include border_1px('bottom', $--lightgray-color, 0);
   .label{
     display:flex;
     flex-direction:column;
@@ -17,11 +17,11 @@
     flex:1;
     display:flex;
     flex-direction:column;
-    color:$normal;
+    color:$--secondary-color;
     margin:0;
   }
   .icon{
-    color:$lightgray;
+    color:$--lightgray-color;
   }
 }
 :host([label-position="top"]){

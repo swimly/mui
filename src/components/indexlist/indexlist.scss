@@ -9,10 +9,10 @@
     height:100%;
     display:block;
     overflow:auto;
-    background:$white;
+    background:$--white-color;
     padding:0 1rem;
     hc-indexlist-letter{
-      background:$lightgray;
+      background:$--lightgray-color;
     }
   }
   .indicate{
@@ -21,7 +21,7 @@
     width:2rem;
     height:2rem;
     right:3.5rem;
-    background:$lightgray;
+    background:$--lightgray-color;
     margin-top:0.3rem;
     transform: rotate(45deg) translateY(-50%);
     border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
@@ -53,14 +53,14 @@
       align-items:center;
       justify-content: center;
       font-size:0.6rem;
-      color:$normal;
+      color:$--secondary-color;
       width:1.2rem;
       transition:0.2s;
       height:1.2rem;
       position:relative;
       .pop{
         position: absolute;
-        background:$lightgray;
+        background:$--lightgray-color;
         display:inline-block;
         width:2rem;
         height:2rem;
@@ -75,7 +75,7 @@
       }
       &.current{
         transform:translateX(-1rem);
-        color:$primary;
+        color:$--primary-color;
       }
     }
   }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>粘性布局</title>
+  <link rel="stylesheet" href="base.css">
+  <style>
+    .test {
+      font-size: 16px;
+    }
+  </style>
+  <script type="module" src="../../www/build/mui.esm.js"></script>
+  <script nomodule src="../../www/build/mui.js"></script>
+</head>
+
+<body>
+  <hc-page titles="粘性布局">
+    <div class="panel">
+      <h2></h2>
+      <div class="test" style="height:100px">上面测试内容</div>
+      <hc-sticky id="sticky">
+        <div class="test" style="height:88px">粘性布局的块，offset设置吸顶距离（组件在吸顶时与顶部的距离）</div>
+      </hc-sticky>
+      <div class="test" style="height:800px;">下面测试内容</div>
+    </div>
+  </hc-page>
+
+  <script>
+    var sticky = document.querySelector('#sticky')
+    sticky.offset = 0
+  </script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class ListItem {
-  @Prop() key: string;
+  @Prop() keys: string;
   @Prop() titles: string;
   @Prop() date: string;
   @Prop() suffixIcon: string;
@@ -32,7 +32,7 @@ export class ListItem {
               (() => {
                 if (this.type == 'sort') {
                   return (
-                    <span class="sort">{this.key}</span>
+                    <span class="sort">{this.keys}</span>
                   )
                 }
                 if (this.prefixUrl) {

@@ -17,7 +17,7 @@ export class List {
     var children = slots.assignedElements()
     children.forEach((child, index) => {
       child.setAttribute('type', this.type)
-      child.setAttribute('key', `${index + 1}`)
+      child.setAttribute('keys', `${index + 1}`)
       child.setAttribute('prefix-size', this.prefixSize)
       child.setAttribute('ellipsis', `${this.ellipsis}`)
       child.setAttribute('vertical', this.vertical)

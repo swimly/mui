@@ -1,5 +1,5 @@
 export declare class ListItem {
-    key: string;
+    keys: string;
     titles: string;
     date: string;
     suffixIcon: string;

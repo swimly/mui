@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  font-size:0.7rem;
+  color:#262626;
+  line-height: 1.6;
+  text-align: justify;
+  transition: 0.3s;
+  position: relative;
+  p{
+    margin:0;
+    .last{
+      display:inline-block;
+      width:0;
+    }
+  }
+  .more{
+    text-indent: 0;
+    position: absolute;
+    right:0;
+    bottom:0;
+    background:#fff;
+    color: $--primary-color;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left:0.2rem;
+    justify-content: center;
+    span{
+      transform: scale(0.8);
+      transform-origin: right center;
+    }
+  }
+}
+:host([full][open]) {
+  .more{
+    position: static;
+    padding:0;
+    padding:0.5rem 0;
+  }
+}

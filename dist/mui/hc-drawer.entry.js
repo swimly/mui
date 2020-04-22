@@ -9,6 +9,8 @@ const Drawer = class {
         this.maskClosable = true;
         this.mask = true;
         this.round = false;
+        this.full = false;
+        this.scroller = true;
     }
     visibleHandle(newValue) {
         if (newValue) {
@@ -55,7 +57,8 @@ const Drawer = class {
         }
     }
     render() {
-        return (h(Host, null, this.mask ? h("div", { class: "hc-mask" }) : h("span", null), h("div", { class: "hc-drawer" }, h("div", { class: "hc-drawer__content", style: { padding: `${this.padding}px` } }, h("slot", null)))));
+        console.log(this.scroller);
+        return (h(Host, null, this.mask ? h("div", { class: "hc-mask" }) : h("span", null), h("div", { class: "hc-drawer", style: this.full ? { width: `100%`, height: `100%` } : {} }, h("div", { class: "hc-drawer__content", style: { padding: `${this.padding}px`, height: this.scroller ? 'auto' : '100%' } }, h("slot", null)))));
     }
     get el() { return getElement(this); }
     static get watchers() { return {
@@ -63,7 +66,7 @@ const Drawer = class {
         "direction": ["directionHandle"],
         "round": ["roundHandle"]
     }; }
-    static get style() { return ":host {\n  display: block;\n}\n:host .hc-drawer {\n  position: fixed;\n  min-height: 30%;\n  min-width: 60%;\n  background: #fff;\n  z-index: 101;\n}\n:host .hc-mask {\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 0;\n  -webkit-transition: 0.3s;\n  transition: 0.3s;\n}\n\n:host([visible=true]) .hc-mask {\n  opacity: 1;\n  z-index: 100;\n}\n\n:host([transparent]) .hc-drawer {\n  background: transparent;\n}\n\n:host([direction=ttb]) .hc-drawer {\n  top: 0;\n  left: 0;\n  bottom: auto;\n  right: auto;\n  width: 100%;\n  -webkit-transform: translate(0, -100%);\n  transform: translate(0, -100%);\n}\n\n:host([direction=ttb][round=true]) .hc-drawer {\n  border-radius: 0 0 1rem 1rem;\n}\n\n:host([direction=btt]) .hc-drawer {\n  top: auto;\n  left: 0;\n  bottom: 0;\n  right: auto;\n  width: 100%;\n  -webkit-transform: translate(0, 100%);\n  transform: translate(0, 100%);\n}\n\n:host([direction=btt][round=true]) .hc-drawer {\n  border-radius: 1rem 1rem 0 0;\n}\n\n:host([direction=ltr]) .hc-drawer {\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: auto;\n  -webkit-transform: translate(-100%, 0);\n  transform: translate(-100%, 0);\n}\n\n:host([direction=rtl]) .hc-drawer {\n  top: 0;\n  left: auto;\n  bottom: 0;\n  right: 0;\n  -webkit-transform: translate(100%, 0);\n  transform: translate(100%, 0);\n}\n\n:host([visible=true]) .hc-drawer {\n  -webkit-transform: translate(0, 0);\n  transform: translate(0, 0);\n}"; }
+    static get style() { return ":host {\n  display: block;\n}\n:host .hc-drawer {\n  position: fixed;\n  min-height: 30%;\n  min-width: 60%;\n  background: #fff;\n  z-index: 101;\n}\n:host .hc-mask {\n  position: fixed;\n  z-index: -1;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background: rgba(0, 0, 0, 0.4);\n  opacity: 0;\n  transition: 0.3s;\n}\n\n:host([visible=true]) .hc-mask {\n  opacity: 1;\n  z-index: 100;\n}\n\n:host([transparent]) .hc-drawer {\n  background: transparent;\n}\n\n:host([direction=ttb]) .hc-drawer {\n  top: 0;\n  left: 0;\n  bottom: auto;\n  right: auto;\n  width: 100%;\n  transform: translate(0, -100%);\n}\n\n:host([direction=ttb][round=true]) .hc-drawer {\n  border-radius: 0 0 1rem 1rem;\n}\n\n:host([direction=btt]) .hc-drawer {\n  top: auto;\n  left: 0;\n  bottom: 0;\n  right: auto;\n  width: 100%;\n  transform: translate(0, 100%);\n}\n\n:host([direction=btt][round=true]) .hc-drawer {\n  border-radius: 1rem 1rem 0 0;\n}\n\n:host([direction=ltr]) .hc-drawer {\n  top: 0;\n  left: 0;\n  bottom: 0;\n  right: auto;\n  transform: translate(-100%, 0);\n}\n\n:host([direction=rtl]) .hc-drawer {\n  top: 0;\n  left: auto;\n  bottom: 0;\n  right: 0;\n  transform: translate(100%, 0);\n}\n\n:host([visible=true]) .hc-drawer {\n  transform: translate(0, 0);\n}"; }
 };
 
 export { Drawer as hc_drawer };

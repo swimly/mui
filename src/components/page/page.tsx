@@ -22,10 +22,14 @@ export class Page {
   @Event() vclick: EventEmitter;
   componentDidLoad() {
     this.renderStyle()
-    this.el.shadowRoot.querySelector('section').addEventListener('scroll', (e) => {
+    var section = this.el.shadowRoot.querySelector('section')
+    section.addEventListener('scroll', () => {
       this.scrolldistance = Math.round(this.el.shadowRoot.querySelector('section').scrollTop)
       this.el.setAttribute('scrolldistance', `${this.scrolldistance}`)
-      this.vscroll.emit(e)
+      this.vscroll.emit({
+        scrollTop: this.scrolldistance,
+        offsetTop: section.offsetTop
+      })
     })
   }
   // 初始化样式
@@ -104,6 +108,7 @@ export class Page {
         <section>
           <slot></slot>
         </section>
+        <slot name="footer"></slot>
       </Host>
     );
   }

@@ -16,8 +16,8 @@
       display:inline-block;
       width:200%;
       height:200%;
-      border-top:1px solid $lightgray;
-      border-bottom:1px solid $lightgray;
+      border-top:1px solid $--lightgray-color;
+      border-bottom:1px solid $--lightgray-color;
       transform: scaleY(0.5);
       transform-origin: left top;
     }
@@ -37,12 +37,12 @@
       position: absolute;
       bottom:0;
       left:0;
-      background:$lightgray;
+      background:$--lightgray-color;
       transform: scaleY(0.5);
     }
     h2{
       font-size:0.8rem;
-      color:$black;
+      color:$--black-color;
       font-weight:normal;
       flex:1;
       margin:0 1rem;
@@ -50,9 +50,9 @@
     }
     p{
       margin:0;
-      color:$normal;
+      color:$--secondary-color;
       &.confirm{
-        color:$primary;
+        color:$--primary-color;
       }
     }
   }

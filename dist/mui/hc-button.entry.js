@@ -22,6 +22,7 @@ const Button = class {
         return `hc-button`;
     }
     componentDidLoad() {
+        // console.log(this.onclick())
         if (!this.disabled) {
             this.el.addEventListener('click', (e) => {
                 this.el.setAttribute('active', 'true');

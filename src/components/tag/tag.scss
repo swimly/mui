@@ -1,57 +1,57 @@
 :host {
   display: inline-flex;
   font-size:$h6;
-  @include border_1px('default', $lightgray, 0.5rem);
+  @include border_1px('default', $--lightgray-color, 0.5rem);
   height:1.4rem;
   align-items: center;
   padding:0 0.8rem;
   border-radius:0.2rem;
-  background-color: $white;
-  color:$black;
+  background-color: $--white-color;
+  color:$--black-color;
   box-sizing: border-box;
 }
 :host([color]){
   @include border_1px('default', transparent, 0.5rem);
 }
 :host([type]){
-  color:$white;
+  color:$--white-color;
   @include border_1px('default', transparent, 0.5rem);
 }
 :host([type="primary"]){
-  background-color:$primary;
+  background-color:$--primary-color;
 }
 :host([type="primary"][shape="plain"]){
-  background-color:rgba($primary, 0.1);
-  @include border_1px('default', $primary, 0.5rem);
-  color:$primary;
+  background-color:rgba($--primary-color, 0.1);
+  @include border_1px('default', $--primary-color, 0.5rem);
+  color:$--primary-color;
 }
 :host([type="primary"][shape="outline"]){
-  @include border_1px('default', $primary, 0.5rem);
-  color:$primary;
-  background-color:$white;
+  @include border_1px('default', $--primary-color, 0.5rem);
+  color:$--primary-color;
+  background-color:$--white-color;
 }
 :host([type="primary"][shape="light"]){
-  @include border_1px('default', $lightgray, 0.5rem);
-  color:$primary;
-  background-color:$white;
+  @include border_1px('default', $--lightgray-color, 0.5rem);
+  color:$--primary-color;
+  background-color:$--white-color;
 }
 :host([type="danger"]){
-  background-color:$danger;
+  background-color:$--danger-color;
 }
 :host([type="danger"][shape="plain"]){
-  background-color:rgba($danger, 0.1);
-  @include border_1px('default', $danger, 0.5rem);
-  color:$danger;
+  background-color:rgba($--danger-color, 0.1);
+  @include border_1px('default', $--danger-color, 0.5rem);
+  color:$--danger-color;
 }
 :host([type="danger"][shape="outline"]){
-  @include border_1px('default', $danger, 0.5rem);
-  color:$danger;
-  background-color:$white;
+  @include border_1px('default', $--danger-color, 0.5rem);
+  color:$--danger-color;
+  background-color:$--white-color;
 }
 :host([type="danger"][shape="light"]){
-  @include border_1px('default', $lightgray, 0.5rem);
-  color:$danger;
-  background-color:$white;
+  @include border_1px('default', $--lightgray-color, 0.5rem);
+  color:$--danger-color;
+  background-color:$--white-color;
 }
 :host([shape="rounder"]){
   @include border_1px('default', transparent, 3rem);

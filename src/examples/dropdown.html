@@ -1,50 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>下拉菜单</title>
-  <link rel="stylesheet" href="base.css">
-</head>
-<body>
-  <hc-page titles="下拉菜单">
-    <div class="panel">
-      <h2>普通用法</h2>
-      <hc-dropdown>
-        <hc-dropdown-item label="全部商品" option="[{label: '全部商品'},{label: '销量商品'},{label: '好评商品'}]" value="0"></hc-dropdown-item>
-        <hc-dropdown-item label="默认排序" option="[{label: '默认排序'},{label: '好评排序'},{label: '销量排序'}]" value="0"></hc-dropdown-item>
-      </hc-dropdown>
-    </div>
-    <div class="panel">
-      <h2>普通用法</h2>
-      <hc-dropdown>
-        <hc-dropdown-item label="全部商品" option="[{label: '全部商品'},{label: '销量商品'},{label: '好评商品'}]" value="0"></hc-dropdown-item>
-        <hc-dropdown-item label="默认排序" option="[{label: '默认排序'},{label: '好评排序'},{label: '销量排序'}]" value="0"></hc-dropdown-item>
-      </hc-dropdown>
-    </div>
-    <div class="panel">
-      <h2>普通用法</h2>
-      <hc-dropdown>
-        <hc-dropdown-item label="全部商品" option="[{label: '全部商品'},{label: '销量商品'},{label: '好评商品'}]" value="0"></hc-dropdown-item>
-        <hc-dropdown-item label="默认排序" option="[{label: '默认排序'},{label: '好评排序'},{label: '销量排序'}]" value="0"></hc-dropdown-item>
-      </hc-dropdown>
-    </div>
-    <div class="panel">
-      <h2>普通用法</h2>
-      <hc-dropdown>
-        <hc-dropdown-item label="全部商品" option="[{label: '全部商品'},{label: '销量商品'},{label: '好评商品'}]" value="0"></hc-dropdown-item>
-        <hc-dropdown-item label="默认排序" option="[{label: '默认排序'},{label: '好评排序'},{label: '销量排序'}]" value="0"></hc-dropdown-item>
-      </hc-dropdown>
-    </div>
-    <div class="panel">
-      <h2>普通用法</h2>
-      <hc-dropdown>
-        <hc-dropdown-item label="全部商品" option="[{label: '全部商品'},{label: '销量商品'},{label: '好评商品'}]" value="0"></hc-dropdown-item>
-        <hc-dropdown-item label="默认排序" option="[{label: '默认排序'},{label: '好评排序'},{label: '销量排序'}]" value="0"></hc-dropdown-item>
-      </hc-dropdown>
-    </div>
-  </hc-page>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>dropdown</title>
+  <link rel="stylesheet" href="./base.css">
   <script type="module" src="../../www/build/mui.esm.js"></script>
   <script nomodule src="../../www/build/mui.js"></script>
+</head>
+<body>
+  <hc-page titles="下拉选择">
+    <div class="panel">
+      <h2>普通用法</h2>
+      <hc-dropdown id="dropdown"></hc-dropdown>
+    </div>
+  </hc-page>
+  <script>
+    document.querySelector('#dropdown').addEventListener('confirm', e => {
+      console.log('confirm', e.detail)
+    })
+  </script>
 </body>
 </html>

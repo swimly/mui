@@ -7,33 +7,35 @@ import { Component, Host, h, Element, Prop, Event, EventEmitter } from '@stencil
 })
 export class CheckboxGroup {
   @Element() el:HTMLElement;
-  @Prop() value: string[];
+  @Prop() value;
   $slot
+  result;
   @Event() vichange:EventEmitter;
   componentDidLoad () {
     this.$slot = this.el.shadowRoot.querySelector('slot');
-    const children = this.$slot.assignedElements()
+    const children = this.$slot.assignedElements();
+    this.result = typeof this.value == 'string' ? eval(`(${this.value})`) : this.value
     this.vichange.emit(this.value)
     // 初始化选中
     children.forEach(item => {
-      this.value.forEach(value => {
+      this.result.forEach(value => {
         if (item.value == value) {
           item.checked = true
         }
       })
       item.addEventListener('vchange', (e) => {
         if (e.detail.checked) {
-          this.value = [...this.value, e.detail.value]
+          this.result = [...this.result, e.detail.value]
         } else {
           // 取消当前选中
-          let value = this.value
-          const index = this.value.indexOf(e.detail.value)
+          let value = this.result
+          const index = this.result.indexOf(e.detail.value)
           if (index >= 0) {
             value.splice(index, 1)
-            this.value = value;
+            this.result = value;
           }
         }
-        this.vichange.emit(this.value)
+        this.vichange.emit(this.result)
       })
     })
   }

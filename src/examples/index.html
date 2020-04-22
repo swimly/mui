@@ -14,6 +14,7 @@
     body {
       height: 100%;
       background: #f5f5f5;
+      margin:0;
     }
 
     h2 {
@@ -77,8 +78,16 @@
   <hc-page titles="组件" left-buttons="[]" padding="0.5rem">
     <h2>表单</h2>
     <ul>
-      <li><a href="./button.html"><span>hc-button</span> <b>按钮</b></a></li>
-      <li><a href="./checkbox.html"><span>hc-checkbox</span> <b>复选框</b></a></li>
+      <li>
+        <hc-link titles="按钮" to="/button" component="./button.html">
+          <a href="javascript:;"><span>hc-button</span> <b>按钮</b></a>
+        </hc-link>
+      </li>
+      <li>
+        <hc-link titles="复选框" to="/checkbox" component="./checkbox.html">
+          <a href="javascript:;"><span>hc-checkbox</span> <b>复选框</b></a>
+        </hc-link>
+      </li>
       <li><a href="./radio.html"><span>hc-radio</span> <b>单选</b></a></li>
       <li><a href="./switch.html"><span>hc-switch</span> <b>开关</b></a></li>
       <li><a href="./input.html"><span>hc-input</span> <b>输入框</b></a></li>
@@ -86,6 +95,9 @@
     </ul>
     <h2>布局</h2>
     <ul>
+      <li><a href="./skeleton.html"><span>hc-skeleton</span> <b>骨架屏</b></a></li>
+      <li><a href="./panel.html"><span>hc-panel</span> <b>面板</b></a></li>
+      <li><a href="./section.html"><span>hc-section</span> <b>段落</b></a></li>
       <li><a href="./page.html"><span>hc-page</span> <b>布局</b></a></li>
       <li><a href="./row.html"><span>hc-row</span> <b>栅格</b></a></li>
       <li><a href="./cell.html"><span>hc-cell</span> <b>单元格</b></a></li>
@@ -103,6 +115,7 @@
       <li><a href="./swiper.html"><span>hc-swiper</span> <b>轮播图</b></a></li>
       <li><a href="./collapse.html"><span>hc-collapse</span> <b>折叠面板</b></a></li>
       <li><a href="./image-preview.html"><span>hc-image-preview</span> <b>图片预览</b></a></li>
+      <li><a href="./sticky.html"><span>hc-sticky</span> <b>粘性布局</b></a></li>
     </ul>
     <h2>输入</h2>
     <ul>

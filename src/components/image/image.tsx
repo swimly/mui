@@ -9,7 +9,7 @@ export class Image {
   @Prop() src: string;
   @Prop() width: string | number = 200;
   @Prop() height: string | number = 200;
-  @Prop() lazy: boolean = false;
+  @Prop() lazy: boolean = true;
   @Prop() status: number = 0;
   @Prop() fit: string = 'cover'
   @Element() el:HTMLElement;

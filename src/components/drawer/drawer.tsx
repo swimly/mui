@@ -13,6 +13,8 @@ export class Drawer {
   @Prop() mask:boolean = true;
   @Prop() round: boolean = false;
   @Prop() padding: number;
+  @Prop() full: boolean = false;
+  @Prop() scroller: boolean = true;
   @Element() el: HTMLElement;
   $drawer;
   $mask;
@@ -64,13 +66,14 @@ export class Drawer {
     }
   }
   render() {
+    console.log(this.scroller)
     return (
       <Host>
         {
           this.mask ? <div class="hc-mask"></div> : <span></span>
         }
-        <div class="hc-drawer">
-          <div class="hc-drawer__content" style={{padding: `${this.padding}px`}}>
+        <div class="hc-drawer" style={this.full ? {width: `100%`, height: `100%`} : {}}>
+          <div class="hc-drawer__content" style={{padding: `${this.padding}px`, height: this.scroller ? 'auto' : '100%'}}>
             <slot></slot>
           </div>
         </div>

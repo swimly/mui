@@ -15,7 +15,7 @@ export class ListItem {
             h("div", { class: "prefix", style: this.reverse ? { marginLeft: '0.4rem' } : { marginRight: '0.4rem' } },
                 h("slot", { name: "prefix" }, (() => {
                     if (this.type == 'sort') {
-                        return (h("span", { class: "sort" }, this.key));
+                        return (h("span", { class: "sort" }, this.keys));
                     }
                     if (this.prefixUrl) {
                         return (h("hc-image", { width: parseInt(prefixSize[0]), height: parseInt(prefixSize[1]), src: this.prefixUrl }));
@@ -42,7 +42,7 @@ export class ListItem {
         "$": ["list-item.css"]
     }; }
     static get properties() { return {
-        "key": {
+        "keys": {
             "type": "string",
             "mutable": false,
             "complexType": {
@@ -56,7 +56,7 @@ export class ListItem {
                 "tags": [],
                 "text": ""
             },
-            "attribute": "key",
+            "attribute": "keys",
             "reflect": false
         },
         "titles": {

@@ -6,6 +6,8 @@ export declare class Drawer {
     mask: boolean;
     round: boolean;
     padding: number;
+    full: boolean;
+    scroller: boolean;
     el: HTMLElement;
     $drawer: any;
     $mask: any;

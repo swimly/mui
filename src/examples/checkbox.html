@@ -8,56 +8,49 @@
 </head>
 <body>
   <hc-page titles="复选框">
-    <div class="panel">
-      <h2>普通用法</h2>
+    <hc-panel titles="普通">
       <hc-checkbox checked="true" value="1">男</hc-checkbox>
-    </div>
-    <div class="panel">
-      <h2>圆形</h2>
+    </hc-panel>
+    <hc-panel titles="圆形">
       <hc-checkbox shape="circle" value="1">男</hc-checkbox>
-    </div>
-    <div class="panel">
-      <h2>块状</h2>
+    </hc-panel>
+    <hc-panel titles="块状">
       <hc-checkbox shape="circle" type="block" value="1">受令人应按规定填写记录并进行复诵，发令人确认受令人复诵无误后方可给予( )，受令人不得利用其它纸张进行临时记录。</hc-checkbox>
       <hc-checkbox shape="circle" type="block-reverse" value="0">受令人应按规定填写记录并进行复诵，发令人确认受令人复诵无误后方可给予( )，受令人不得利用其它纸张进行临时记录。</hc-checkbox>
-    </div>
-    <div class="panel">
-      <h2>按钮模式</h2>
+    </hc-panel>
+    <hc-panel titles="按钮">
       <hc-checkbox type="outline">web前端开发</hc-checkbox>
       <hc-checkbox type="fill">后端开发</hc-checkbox>
       <hc-checkbox type="outline">设计ui</hc-checkbox>
-    </div>
-    <div class="panel">
-      <h2>自定义颜色</h2>
+    </hc-panel>
+    <hc-panel titles="自定义颜色">
       <hc-checkbox color="#e90000" shape="circle" value="1">男</hc-checkbox>
       <hc-checkbox color="#e90000" type="outline">web前端开发</hc-checkbox>
       <hc-checkbox color="#e90000" type="fill">后端开发</hc-checkbox>
-    </div>
-    <div class="panel">
-      <h2>复选框组（重点）</h2>
-      <hc-checkbox-group type="block" id="group">
+    </hc-panel>
+    <hc-panel titles="复选框组">
+      <hc-checkbox-group type="block" id="group" value="[0]">
         <hc-checkbox value="0">前端开发</hc-checkbox>
         <hc-checkbox value="1">程序员</hc-checkbox>
         <hc-checkbox value="2">设计师</hc-checkbox>
       </hc-checkbox-group>
-      <p id="result"></p>
-    </div>
+    </hc-panel>
   </hc-page>
   <script type="module" src="../../www/build/mui.esm.js"></script>
   <script nomodule src="../../www/build/mui.js"></script>
   <script>
-    var checkboxs = document.querySelectorAll('hc-checkbox')
-    checkboxs.forEach(item => {
-      item.addEventListener('onChange', e => {
-        // console.log(e)
-      })
-    })
-    var group = document.querySelector('#group')
-    group.value = ['0']
-    group.addEventListener('vichange', e => {
-      console.log(e)
-      document.querySelector('#result').innerHTML = e.detail
-    })
+    // var checkboxs = document.querySelectorAll('hc-checkbox')
+    // checkboxs.forEach(item => {
+    //   item.addEventListener('onChange', e => {
+    //     // console.log(e)
+    //   })
+    // })
+    // var group = document.querySelector('#group')
+    // group.value = ['0']
+    // group.addEventListener('vichange', e => {
+    //   console.log(e)
+    //   document.querySelector('#result').innerHTML = e.detail
+    // })
   </script>
 </body>
 </html>

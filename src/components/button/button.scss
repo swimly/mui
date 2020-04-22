@@ -4,9 +4,9 @@
   align-items:center;
   height:2.4rem;
   justify-content: center;
-  background-color:$white;
+  background-color:$--white-color;
   position:relative;
-  @include border_1px('default', $lightgray, 0);
+  @include border_1px('default', $--lightgray-color, 0);
   .hc-button__label{
     font-size:0.8rem;
     color:inherit;
@@ -20,7 +20,7 @@
     bottom:-1px;
     left:0;
     z-index:100;
-    background:rgba($black, 0.1);
+    background:rgba($--black-color, 0.1);
     opacity:0;
     transition:0.3s;
   }
@@ -28,7 +28,7 @@
 :host([disabled="true"]){
   &:before{
     opacity:1;
-    background: rgba($white, 0.8);
+    background: rgba($--white-color, 0.8);
   }
 }
 :host([active="true"]){
@@ -38,77 +38,77 @@
   }
 }
 :host([type]),:host([color]){
-  color:$white;
+  color:$--white-color;
 }
 :host([type="info"]){
-  background-color: $graybg;
-  @include border_1px('default', $graybg, 0);
-  color:$black;
+  background-color: $--main-color;
+  @include border_1px('default', $--main-color, 0);
+  color:$--black-color;
 }
 :host([type="info"][plain]){
-  background-color:rgba($graybg, 0.1);
-  color:$black;
+  background-color:rgba($--main-color, 0.1);
+  color:$--black-color;
   &:before{
-    background-color: rgba($graybg, 0.1);
+    background-color: rgba($--main-color, 0.1);
   }
 }
 :host([type="primary"]){
-  background-color: $primary;
-  @include border_1px('default', $primary, 0);
+  background-color: $--primary-color;
+  @include border_1px('default', $--primary-color, 0);
 }
 :host([type="primary"][plain]){
-  background-color:rgba($primary, 0.1);
-  color:$primary;
+  background-color:rgba($--primary-color, 0.1);
+  color:$--primary-color;
   &:before{
-    background-color: rgba($primary, 0.1);
+    background-color: rgba($--primary-color, 0.1);
   }
 }
 :host([type="danger"][plain]) {
-  background-color:rgba($danger, 0.1);
-  color:$danger;
+  background-color:rgba($--danger-color, 0.1);
+  color:$--danger-color;
   &:before{
-    background-color: rgba($danger, 0.1);
+    background-color: rgba($--danger-color, 0.1);
   }
 }
 :host([type="primary"][outline]){
-  background-color:$white;
-  color:$primary;
+  background-color:$--white-color;
+  color:$--primary-color;
   &:before{
-    background-color: rgba($primary, 0.1);
+    background-color: rgba($--primary-color, 0.1);
   }
 }
 :host([type="danger"][outline]) {
-  background-color:$white;
-  color:$danger;
+  background-color:$--white-color;
+  color:$--danger-color;
   &:before{
-    background-color: rgba($danger, 0.1);
+    background-color: rgba($--danger-color, 0.1);
   }
 }
 :host([type="danger"]){
-  background-color:$danger;
-  @include border_1px('default', $danger, 0);
+  background-color:$--danger-color;
+  @include border_1px('default', $--danger-color, 0);
 }
 :host([shape="conner"]) {
   border-radius:$radius;
 }
 :host([shape="rounder"]) {
-  @include border_1px('default', $lightgray, 2.8rem);
+  @include border_1px('default', $--lightgray-color, 2.8rem);
   border-radius:1.4rem;
   &:before{
     border-radius:1.4rem;
   }
 }
 :host([type="primary"][shape="conner"]) {
-  @include buttonRadius($radius, $primary)
+  @include buttonRadius($radius, $--primary-color)
 }
 :host([type="primary"][shape="rounder"]) {
-  @include buttonRadius(1.2rem, $primary)
+  @include buttonRadius(1.2rem, $--primary-color)
 }
 :host([type="danger"][shape="conner"]) {
-  @include buttonRadius($radius, $danger)
+  @include buttonRadius($radius, $--danger-color)
 }
 :host([type="danger"][shape="rounder"]) {
-  @include buttonRadius(1.2rem, $danger)
+  @include buttonRadius(1.2rem, $--danger-color)
 }
 :host([shape="rounder"]){
   border-radius:1.4rem;
