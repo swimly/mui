@@ -11,7 +11,7 @@ export class Page {
   @Prop() rightButtons: string = '[]';
   @Prop() padding: string = '0'
   @Prop() color: string = '#262626';
-  @Prop() headBackground = '#fff'
+  @Prop() headBackground = '#fff';
   @Prop() background: string = '#f5f5f5';
   @Prop() scrolldistance: number = 0;
   @Prop() hideHeader: boolean = false;

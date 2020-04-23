@@ -11,6 +11,7 @@ export class Tabbar {
   @Prop() iconSize: number = 28;
   @Prop() defaultColor: string = '#8c8c8c'
   @Prop() activeColor: string = '#2873D6'
+  @Prop() background: string = '#fff';
   @Prop() isDot: boolean = false;
   @Element() el:HTMLElement;
   @Event() vchange: EventEmitter;
@@ -48,7 +49,7 @@ export class Tabbar {
   }
   render() {
     return (
-      <Host style={{flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start'}}>
+      <Host style={{flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start', backgroundColor: this.background}}>
         <slot></slot>
       </Host>
     );

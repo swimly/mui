@@ -13,6 +13,21 @@ export class Icon {
   @Prop() spin: boolean = false
   @Element() el:HTMLElement;
   componentDidLoad () {
+    this.renderIcon()
+  }
+  @Watch('spin')
+  spinHandle (newValue: boolean) {
+    if (newValue) {
+      this.el.setAttribute('spin', `${newValue}`)
+    } else {
+      this.el.removeAttribute('spin')
+    }
+  }
+  @Watch('name')
+  nameHandle () {
+    this.renderIcon()
+  }
+  renderIcon () {
     const use = this.el.shadowRoot.querySelector('#use') as HTMLElement;
     const svg = this.el.shadowRoot.querySelector('.hc-icon') as HTMLElement;
     use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `../../assets/iconfont.svg#icon-${this.name}`);
@@ -27,14 +42,6 @@ export class Icon {
     }
     if (this.spin) {
       this.el.setAttribute('spin', 'true')
-    }
-  }
-  @Watch('spin')
-  spinHandle (newValue: boolean) {
-    if (newValue) {
-      this.el.setAttribute('spin', `${newValue}`)
-    } else {
-      this.el.removeAttribute('spin')
     }
   }
   render() {

@@ -62,20 +62,6 @@ export class Notify {
             h("hc-icon", { spin: this.spin, size: this.iconsize, name: this.icon }),
             h("span", null, this.text)));
     }
-    /**
-     * 已服务的形式调用
-     */
-    async init(option) {
-        const exist = document.querySelector('hc-notify');
-        const notify = exist ? exist : document.createElement('hc-notify');
-        Object.keys(option).forEach(key => {
-            notify.setAttribute(key, option[key]);
-        });
-        notify.setAttribute('service', 'true');
-        document.body.appendChild(notify);
-        notify.showNotify();
-        return notify;
-    }
     static get is() { return "hc-notify"; }
     static get encapsulation() { return "shadow"; }
     static get originalStyleUrls() { return {
@@ -276,28 +262,6 @@ export class Notify {
             },
             "docs": {
                 "text": "(optional) \u9500\u6BC1notify",
-                "tags": []
-            }
-        },
-        "init": {
-            "complexType": {
-                "signature": "(option: any) => Promise<HTMLHcNotifyElement>",
-                "parameters": [{
-                        "tags": [],
-                        "text": ""
-                    }],
-                "references": {
-                    "Promise": {
-                        "location": "global"
-                    },
-                    "HTMLHcNotifyElement": {
-                        "location": "global"
-                    }
-                },
-                "return": "Promise<HTMLHcNotifyElement>"
-            },
-            "docs": {
-                "text": "\u5DF2\u670D\u52A1\u7684\u5F62\u5F0F\u8C03\u7528",
                 "tags": []
             }
         }

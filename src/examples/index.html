@@ -79,14 +79,10 @@
     <h2>表单</h2>
     <ul>
       <li>
-        <hc-link titles="按钮" to="/button" component="./button.html">
-          <a href="javascript:;"><span>hc-button</span> <b>按钮</b></a>
-        </hc-link>
+        <a href="./button.html"><span>hc-button</span> <b>按钮</b></a>
       </li>
       <li>
-        <hc-link titles="复选框" to="/checkbox" component="./checkbox.html">
-          <a href="javascript:;"><span>hc-checkbox</span> <b>复选框</b></a>
-        </hc-link>
+        <a href="./checkbox.html"><span>hc-checkbox</span> <b>复选框</b></a>
       </li>
       <li><a href="./radio.html"><span>hc-radio</span> <b>单选</b></a></li>
       <li><a href="./switch.html"><span>hc-switch</span> <b>开关</b></a></li>
@@ -116,9 +112,15 @@
       <li><a href="./collapse.html"><span>hc-collapse</span> <b>折叠面板</b></a></li>
       <li><a href="./image-preview.html"><span>hc-image-preview</span> <b>图片预览</b></a></li>
       <li><a href="./sticky.html"><span>hc-sticky</span> <b>粘性布局</b></a></li>
+      <li><a href="./video.html"><span>hc-video</span> <b>视频播放</b></a></li>
     </ul>
     <h2>输入</h2>
     <ul>
+      <!-- <li>
+        <hc-link titles="签名" to="/signature" component="./signature.html">
+          <a href="javascript:;"><span>hc-signature</span> <b>签名</b></a>
+        </hc-link>
+      </li> -->
       <li><a href="./signature.html"><span>hc-signature</span> <b>签名</b></a></li>
       <li><a href="./keyboard.html"><span>hc-keyboard</span> <b>安全键盘</b></a></li>
       <li><a href="./actionsheet.html"><span>hc-actionsheet</span> <b>单选</b></a></li>
@@ -141,9 +143,14 @@
     <ul>
       <li><a href="./echarts.html"><span>hc-echarts</span> <b>图表</b></a></li>
     </ul>
+    <hc-tabbar slot="footer" current="0" icon-size="22">
+      <hc-tabbar-item label="组件" default-icon="./assets/nav1.png" active-icon="./assets/nav1-active.png"></hc-tabbar-item>
+      <hc-tabbar-item label="我的" default-icon="./assets/nav4.png" active-icon="./assets/nav4-active.png"></hc-tabbar-item>
+    </hc-tabbar>
   </hc-page>
   <script type="module" src="../../www/build/mui.esm.js"></script>
   <script nomodule src="../../www/build/mui.js"></script>
+  <script src="assets/zepto.min.js"></script>
 </body>
 
 </html>

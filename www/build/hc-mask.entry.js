@@ -42,7 +42,7 @@ const Mask = class {
         return mask;
     }
     get el() { return getElement(this); }
-    static get style() { return ":host {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  transition: 0.3s;\n}"; }
+    static get style() { return ":host {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -ms-flex-align: center;\n  align-items: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  -webkit-transition: 0.3s;\n  transition: 0.3s;\n}"; }
 };
 
 export { Mask as hc_mask };

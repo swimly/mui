@@ -1,0 +1,55 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  video{
+    width:100%;
+    vertical-align: top;
+  }
+  .control{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    height:1.8rem;
+    background:rgba(0,0,0,0.4);
+    position: absolute;
+    padding:0 0.5rem;
+    font-size:0.6rem;
+    color:#fff;
+    box-sizing: border-box;
+    bottom:0;
+    left:0;
+    width:100%;
+    .time{
+      margin:0 0.5rem;
+    }
+    hc-icon{
+      &:last-child{
+        margin-left:0.5rem;
+      }
+    }
+    .bar{
+      height:0.3rem;
+      background:rgba(255,255,255,0.85);
+      border-radius:0.2rem;
+      flex:1;
+      overflow:hidden;
+      position: relative;
+      .loaded{
+        background:rgba(0,0,0,0.1);
+        height:100%;
+        position: absolute;
+        top:0;
+        left:0;
+      }
+      .progress{
+        background: $--primary-color;
+        position: absolute;
+        left:0;
+        top:0;
+        height:100%;
+        z-index:10;
+      }
+    }
+  }
+}

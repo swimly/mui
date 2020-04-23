@@ -59,16 +59,16 @@ export class Toast {
   /**
    * 已服务的形式调用
    */
-  @Method()
-  async init(option) {
-    const exist = document.querySelector('hc-toast')
-    const toast = exist ? exist : document.createElement('hc-toast')
-    Object.keys(option).forEach(key => {
-      toast.setAttribute(key, option[key])
-    })
-    toast.setAttribute('service', 'true')
-    document.body.appendChild(toast)
-    toast.showToast()
-    return toast
-  }
+  // @Method()
+  // async init(option) {
+  //   const exist = document.querySelector('hc-toast')
+  //   const toast = exist ? exist : document.createElement('hc-toast')
+  //   Object.keys(option).forEach(key => {
+  //     toast.setAttribute(key, option[key])
+  //   })
+  //   toast.setAttribute('service', 'true')
+  //   document.body.appendChild(toast)
+  //   toast.showToast()
+  //   return toast
+  // }
 }

@@ -7,6 +7,7 @@ const Tabbar = class {
         this.iconSize = 28;
         this.defaultColor = '#8c8c8c';
         this.activeColor = '#2873D6';
+        this.background = '#fff';
         this.isDot = false;
         this.vchange = createEvent(this, "vchange", 7);
     }
@@ -44,10 +45,10 @@ const Tabbar = class {
         });
     }
     render() {
-        return (h(Host, { style: { flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start' } }, h("slot", null)));
+        return (h(Host, { style: { flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start', backgroundColor: this.background } }, h("slot", null)));
     }
     get el() { return getElement(this); }
-    static get style() { return ":host {\n  display: flex;\n  align-items: center;\n  position: relative;\n}\n:host:before {\n  content: \"\";\n  display: block;\n  width: 100%;\n  left: 0;\n  top: 0;\n  position: absolute;\n  height: 1px;\n  background: #e6e6e6;\n  transform: scaleY(0.5);\n}"; }
+    static get style() { return ":host {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-align: center;\n  align-items: center;\n  position: relative;\n}\n:host:before {\n  content: \"\";\n  display: block;\n  width: 100%;\n  left: 0;\n  top: 0;\n  position: absolute;\n  height: 1px;\n  background: #e6e6e6;\n  -webkit-transform: scaleY(0.5);\n  transform: scaleY(0.5);\n}"; }
 };
 
 export { Tabbar as hc_tabbar };

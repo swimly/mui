@@ -271,10 +271,6 @@ export namespace Components {
     'duration': number;
     'icon': string;
     'iconsize': number;
-    /**
-    * 已服务的形式调用
-    */
-    'init': (option: any) => Promise<HTMLHcNotifyElement>;
     'position': string;
     /**
     * (optional) 初始化notify
@@ -466,6 +462,7 @@ export namespace Components {
   }
   interface HcTabbar {
     'activeColor': string;
+    'background': string;
     'current': string;
     'defaultColor': string;
     'direction': string;
@@ -501,10 +498,6 @@ export namespace Components {
     */
     'destoryToast': () => Promise<void>;
     'duration': number;
-    /**
-    * 已服务的形式调用
-    */
-    'init': (option: any) => Promise<HTMLHcToastElement>;
     'position': string;
     /**
     * (optional) 初始化toast
@@ -512,6 +505,18 @@ export namespace Components {
     'showToast': () => Promise<void>;
     'text': string;
     'visible': boolean;
+  }
+  interface HcVideo {
+    'autoplay': boolean;
+    'current': number;
+    'duration': number;
+    'loaded': number;
+    'network': number;
+    'play': boolean;
+    'poster': string;
+    'preload': string;
+    'src': string;
+    'volume': boolean;
   }
 }
 
@@ -859,6 +864,12 @@ declare global {
     prototype: HTMLHcToastElement;
     new (): HTMLHcToastElement;
   };
+
+  interface HTMLHcVideoElement extends Components.HcVideo, HTMLStencilElement {}
+  var HTMLHcVideoElement: {
+    prototype: HTMLHcVideoElement;
+    new (): HTMLHcVideoElement;
+  };
   interface HTMLElementTagNameMap {
     'hc-actionsheet': HTMLHcActionsheetElement;
     'hc-affix': HTMLHcAffixElement;
@@ -917,6 +928,7 @@ declare global {
     'hc-tag': HTMLHcTagElement;
     'hc-textfield': HTMLHcTextfieldElement;
     'hc-toast': HTMLHcToastElement;
+    'hc-video': HTMLHcVideoElement;
   }
 }
 
@@ -1352,6 +1364,7 @@ declare namespace LocalJSX {
   }
   interface HcTabbar {
     'activeColor'?: string;
+    'background'?: string;
     'current'?: string;
     'defaultColor'?: string;
     'direction'?: string;
@@ -1387,6 +1400,18 @@ declare namespace LocalJSX {
     'position'?: string;
     'text'?: string;
     'visible'?: boolean;
+  }
+  interface HcVideo {
+    'autoplay'?: boolean;
+    'current'?: number;
+    'duration'?: number;
+    'loaded'?: number;
+    'network'?: number;
+    'play'?: boolean;
+    'poster'?: string;
+    'preload'?: string;
+    'src'?: string;
+    'volume'?: boolean;
   }
 
   interface IntrinsicElements {
@@ -1447,6 +1472,7 @@ declare namespace LocalJSX {
     'hc-tag': HcTag;
     'hc-textfield': HcTextfield;
     'hc-toast': HcToast;
+    'hc-video': HcVideo;
   }
 }
 
@@ -1513,6 +1539,7 @@ declare module "@stencil/core" {
       'hc-tag': LocalJSX.HcTag & JSXBase.HTMLAttributes<HTMLHcTagElement>;
       'hc-textfield': LocalJSX.HcTextfield & JSXBase.HTMLAttributes<HTMLHcTextfieldElement>;
       'hc-toast': LocalJSX.HcToast & JSXBase.HTMLAttributes<HTMLHcToastElement>;
+      'hc-video': LocalJSX.HcVideo & JSXBase.HTMLAttributes<HTMLHcVideoElement>;
     }
   }
 }

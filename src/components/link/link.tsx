@@ -9,10 +9,12 @@ export class Link {
   @Prop() component: string;
   @Prop() titles: string;
   bindClick () {
+    window.location.hash = this.to;
     var iframe = document.createElement('iframe')
+    iframe.style.width = `100%`;
+    iframe.style.height = `100%`;
+    iframe.style.border = `none`;
     iframe.src = this.component
-    iframe.style.display = 'none'
-    document.body.appendChild(iframe)
     var mask = document.createElement('hc-mask')
     mask.setAttribute('background', 'rgba(0,0,0,0)')
     document.body.appendChild(mask)
@@ -23,15 +25,17 @@ export class Link {
     loading.setAttribute('visible', 'true')
     loading.setAttribute('spin', 'true')
     document.body.appendChild(loading)
+    var drawer = document.createElement('hc-drawer')
+    drawer.setAttribute('direction', 'rtl')
+    drawer.setAttribute('full', 'true')
+    drawer.setAttribute('mask', 'false')
+    drawer.setAttribute('scroller', 'false')
+    drawer.appendChild(iframe)
+    document.body.appendChild(drawer)
     iframe.onload = () => {
-      var content = iframe.contentDocument.body.querySelector('hc-page')
-      var drawer = document.createElement('hc-drawer')
-      drawer.setAttribute('direction', 'rtl')
-      drawer.setAttribute('full', 'true')
-      drawer.setAttribute('mask', 'false')
-      drawer.setAttribute('scroller', 'false')
-      drawer.innerHTML = content.outerHTML
-      document.body.appendChild(drawer)
+      iframe.contentDocument.querySelector('html').style.height = `100%`
+      iframe.contentDocument.body.style.height = `100%`;
+      iframe.contentDocument.body.style.margin = `0`;
       document.body.removeChild(document.querySelector('hc-mask'))
       document.body.removeChild(document.querySelector('hc-notify'))
       setTimeout(() => {

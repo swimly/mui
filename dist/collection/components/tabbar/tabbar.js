@@ -5,6 +5,7 @@ export class Tabbar {
         this.iconSize = 28;
         this.defaultColor = '#8c8c8c';
         this.activeColor = '#2873D6';
+        this.background = '#fff';
         this.isDot = false;
     }
     componentDidLoad() {
@@ -41,7 +42,7 @@ export class Tabbar {
         });
     }
     render() {
-        return (h(Host, { style: { flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start' } },
+        return (h(Host, { style: { flexDirection: this.direction, justifyContent: this.direction == 'row' ? 'space-around' : 'flex-start', backgroundColor: this.background } },
             h("slot", null)));
     }
     static get is() { return "hc-tabbar"; }
@@ -141,6 +142,24 @@ export class Tabbar {
             "attribute": "active-color",
             "reflect": false,
             "defaultValue": "'#2873D6'"
+        },
+        "background": {
+            "type": "string",
+            "mutable": false,
+            "complexType": {
+                "original": "string",
+                "resolved": "string",
+                "references": {}
+            },
+            "required": false,
+            "optional": false,
+            "docs": {
+                "tags": [],
+                "text": ""
+            },
+            "attribute": "background",
+            "reflect": false,
+            "defaultValue": "'#fff'"
         },
         "isDot": {
             "type": "boolean",

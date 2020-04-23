@@ -5,6 +5,20 @@ export class Icon {
         this.spin = false;
     }
     componentDidLoad() {
+        this.renderIcon();
+    }
+    spinHandle(newValue) {
+        if (newValue) {
+            this.el.setAttribute('spin', `${newValue}`);
+        }
+        else {
+            this.el.removeAttribute('spin');
+        }
+    }
+    nameHandle() {
+        this.renderIcon();
+    }
+    renderIcon() {
         const use = this.el.shadowRoot.querySelector('#use');
         const svg = this.el.shadowRoot.querySelector('.hc-icon');
         use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `../../assets/iconfont.svg#icon-${this.name}`);
@@ -19,14 +33,6 @@ export class Icon {
         }
         if (this.spin) {
             this.el.setAttribute('spin', 'true');
-        }
-    }
-    spinHandle(newValue) {
-        if (newValue) {
-            this.el.setAttribute('spin', `${newValue}`);
-        }
-        else {
-            this.el.removeAttribute('spin');
         }
     }
     render() {
@@ -118,5 +124,8 @@ export class Icon {
     static get watchers() { return [{
             "propName": "spin",
             "methodName": "spinHandle"
+        }, {
+            "propName": "name",
+            "methodName": "nameHandle"
         }]; }
 }

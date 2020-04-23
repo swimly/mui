@@ -6,5 +6,7 @@ export declare class Icon {
     el: HTMLElement;
     componentDidLoad(): void;
     spinHandle(newValue: boolean): void;
+    nameHandle(): void;
+    renderIcon(): void;
     render(): any;
 }

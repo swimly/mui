@@ -17,7 +17,7 @@ const Cell = class {
             }
         })()));
     }
-    static get style() { return ":host {\n  display: flex;\n  flex-direction: row;\n  font-size: 0.8rem;\n  padding: 0.7rem 0;\n  position: relative;\n}\n:host:after {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 1px;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  background: #e6e6e6;\n  transform: scaleY(0.5);\n}\n:host * {\n  margin: 0;\n  font-weight: normal;\n  font-size: inherit;\n  color: inherit;\n}\n:host .label {\n  flex: 1;\n  color: #262626;\n}\n:host .label p {\n  font-size: 0.7rem;\n  color: #8c8c8c;\n}\n:host .value {\n  text-align: right;\n  color: #f5f5f5;\n}\n\n:host([middle]) {\n  align-items: center;\n}"; }
+    static get style() { return ":host {\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  font-size: 0.8rem;\n  padding: 0.7rem 0;\n  position: relative;\n}\n:host:after {\n  content: \"\";\n  display: inline-block;\n  width: 100%;\n  height: 1px;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  background: #e6e6e6;\n  -webkit-transform: scaleY(0.5);\n  transform: scaleY(0.5);\n}\n:host * {\n  margin: 0;\n  font-weight: normal;\n  font-size: inherit;\n  color: inherit;\n}\n:host .label {\n  -ms-flex: 1;\n  flex: 1;\n  color: #262626;\n}\n:host .label p {\n  font-size: 0.7rem;\n  color: #8c8c8c;\n}\n:host .value {\n  text-align: right;\n  color: #f5f5f5;\n}\n\n:host([middle]) {\n  -ms-flex-align: center;\n  align-items: center;\n}"; }
 };
 
 export { Cell as hc_cell };

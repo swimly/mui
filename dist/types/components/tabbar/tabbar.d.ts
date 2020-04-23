@@ -5,6 +5,7 @@ export declare class Tabbar {
     iconSize: number;
     defaultColor: string;
     activeColor: string;
+    background: string;
     isDot: boolean;
     el: HTMLElement;
     vchange: EventEmitter;
