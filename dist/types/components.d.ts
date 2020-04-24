@@ -271,10 +271,6 @@ export namespace Components {
     'duration': number;
     'icon': string;
     'iconsize': number;
-    /**
-    * 已服务的形式调用
-    */
-    'init': (option: any) => Promise<HTMLHcNotifyElement>;
     'position': string;
     /**
     * (optional) 初始化notify
@@ -502,10 +498,6 @@ export namespace Components {
     */
     'destoryToast': () => Promise<void>;
     'duration': number;
-    /**
-    * 已服务的形式调用
-    */
-    'init': (option: any) => Promise<HTMLHcToastElement>;
     'position': string;
     /**
     * (optional) 初始化toast
@@ -516,15 +508,17 @@ export namespace Components {
   }
   interface HcVideo {
     'autoplay': boolean;
+    'controls': boolean;
     'current': number;
     'duration': number;
+    'height': number;
     'loaded': number;
+    'muted': boolean;
     'network': number;
     'play': boolean;
     'poster': string;
     'preload': string;
     'src': string;
-    'volume': boolean;
   }
 }
 
@@ -1411,15 +1405,17 @@ declare namespace LocalJSX {
   }
   interface HcVideo {
     'autoplay'?: boolean;
+    'controls'?: boolean;
     'current'?: number;
     'duration'?: number;
+    'height'?: number;
     'loaded'?: number;
+    'muted'?: boolean;
     'network'?: number;
     'play'?: boolean;
     'poster'?: string;
     'preload'?: string;
     'src'?: string;
-    'volume'?: boolean;
   }
 
   interface IntrinsicElements {

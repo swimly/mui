@@ -19,8 +19,4 @@ export declare class Notify {
     componentDidLoad(): void;
     renderBackground(): void;
     render(): any;
-    /**
-     * 已服务的形式调用
-     */
-    init(option: any): Promise<HTMLHcNotifyElement>;
 }

@@ -3,9 +3,61 @@
   flex-direction: column;
   position: relative;
   background:#000;
+  overflow: hidden;
   video{
     width:100%;
     vertical-align: top;
+  }
+  .large{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(2);
+    color:rgba(255,255,255,0.7);
+    opacity:0;
+    transition:0.3s;
+    z-index:-1;
+    &.show{
+      opacity:1;
+      z-index:10;
+      transform: translate(-50%,-50%) scale(1);
+    }
+  }
+  .bar{
+    height:0.3rem;
+    background:rgba(255,255,255,0.85);
+    border-radius:0.2rem;
+    flex:1;
+    overflow:hidden;
+    position: relative;
+    &.full{
+      position: absolute;
+      left:0;
+      bottom:0;
+      height:0.1rem;
+      border-radius:0;
+      transition:0.3s;
+      transform: translateY(100%);
+      width:100%;
+      &.show{
+        transform: translateY(0);
+      }
+    }
+    .loaded{
+      background:rgba(0,0,0,0.1);
+      height:100%;
+      position: absolute;
+      top:0;
+      left:0;
+    }
+    .progress{
+      background: $--primary-color;
+      position: absolute;
+      left:0;
+      top:0;
+      height:100%;
+      z-index:10;
+    }
   }
   .control{
     display:flex;
@@ -21,35 +73,18 @@
     bottom:0;
     left:0;
     width:100%;
+    z-index:10;
+    transform: translateY(100%);
+    transition:0.3s;
+    &.show-control{
+      transform: translateY(0);
+    }
     .time{
       margin:0 0.5rem;
     }
     hc-icon{
       &:last-child{
         margin-left:0.5rem;
-      }
-    }
-    .bar{
-      height:0.3rem;
-      background:rgba(255,255,255,0.85);
-      border-radius:0.2rem;
-      flex:1;
-      overflow:hidden;
-      position: relative;
-      .loaded{
-        background:rgba(0,0,0,0.1);
-        height:100%;
-        position: absolute;
-        top:0;
-        left:0;
-      }
-      .progress{
-        background: $--primary-color;
-        position: absolute;
-        left:0;
-        top:0;
-        height:100%;
-        z-index:10;
       }
     }
   }
