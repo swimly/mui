@@ -62,6 +62,20 @@ const Notify = class {
     render() {
         return (h(Host, { style: { backgroundColor: this.background } }, h("hc-icon", { spin: this.spin, size: this.iconsize, name: this.icon }), h("span", null, this.text)));
     }
+    /**
+     * 已服务的形式调用
+     */
+    async init(option) {
+        const exist = document.querySelector('hc-notify');
+        const notify = exist ? exist : document.createElement('hc-notify');
+        Object.keys(option).forEach(key => {
+            notify.setAttribute(key, option[key]);
+        });
+        notify.setAttribute('service', 'true');
+        document.body.appendChild(notify);
+        notify.showNotify();
+        return notify;
+    }
     get el() { return getElement(this); }
     static get watchers() { return {
         "visible": ["watchHandler"]

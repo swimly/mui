@@ -7,7 +7,7 @@ import { Component, Host, h, Prop, Element, Watch } from '@stencil/core';
 })
 export class Video {
   @Prop() src: string;
-  @Prop() preload: string = 'auto';
+  @Prop() preload: string = 'metadata';
   @Prop() autoplay: boolean = false;
   @Prop() play: boolean = false;
   @Prop() network: number;
@@ -18,7 +18,6 @@ export class Video {
   @Prop() volume: boolean = true;
   @Element() el:HTMLElement;
   $video;
-  timer;
   errormsg = ['用户中止', '网络错误', '解码错误', 'URL无效']
   @Watch('play')
   playHandle (v) {
@@ -26,14 +25,9 @@ export class Video {
     if (v) {
       this.$video.play()
       playicon.setAttribute('name', 'suspended')
-      clearInterval(this.timer)
-      this.timer = setInterval(() => {
-        this.current = this.$video.currentTime;
-      }, 1000)
     } else {
       this.$video.pause()
       playicon.setAttribute('name', 'play')
-      clearInterval(this.timer)
     }
   }
   @Watch('volume')
@@ -54,10 +48,14 @@ export class Video {
     }
     this.s_to_hs(60)
   }
+  ontimeupdate () {
+    this.current = this.$video.currentTime;
+  }
   bindPlay () {
     this.play = !this.play
   }
   onprogress () {
+    console.log(this.$video.buffered)
     this.loaded = Math.round((this.$video.buffered.end(0) / this.duration)*100)
   }
   onloadedmetadata () {
@@ -68,6 +66,17 @@ export class Video {
   }
   onloadeddata () {
     this.loaded = 100
+    if (!this.poster) {
+      var canvas = document.createElement('canvas')
+      var width = this.$video.videoWidth
+      var height = this.$video.videoHeight
+      canvas.width = width
+      canvas.height = height
+      var ctx = canvas.getContext('2d')
+      ctx.drawImage(this.$video, 0, 0, width, height)
+      var src = canvas.toDataURL('image/jpeg')
+      this.poster = src
+    }
   }
   s_to_hs(sec){
     var m = Math.floor(sec / 60);
@@ -86,6 +95,12 @@ export class Video {
   bindfullScreen () {
     this.$video.webkitRequestFullScreen()
   }
+  ondurationchange () {
+    this.duration = this.$video.duration
+  }
+  onended () {
+    this.play = !this.play
+  }
   render() {
     return (
       <Host>
@@ -94,9 +109,14 @@ export class Video {
           onLoadedMetaData={this.onloadedmetadata.bind(this)}
           onLoadedData={this.onloadeddata.bind(this)}
           onCanPlay={this.oncanplay.bind(this)}
+          onTimeUpdate={this.ontimeupdate.bind(this)}
+          onDurationChange={this.ondurationchange.bind(this)}
+          onEnded={this.onended.bind(this)}
           poster={this.poster} 
           autoplay={this.autoplay} 
           preload={this.preload} 
+          webkit-playsinline
+          playsInline
           x5-video-player-type="h5-page" 
           src={this.src}
         ></video>

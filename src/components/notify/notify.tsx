@@ -80,17 +80,17 @@ export class Notify {
   /**
    * 已服务的形式调用
    */
-  // @Method()
-  // async init(option) {
-  //   const exist = document.querySelector('hc-notify')
-  //   const notify = exist ? exist : document.createElement('hc-notify')
-  //   Object.keys(option).forEach(key => {
-  //     notify.setAttribute(key, option[key])
-  //   })
-  //   notify.setAttribute('service', 'true')
-  //   document.body.appendChild(notify)
-  //   notify.showNotify()
-  //   return notify
-  // }
+  @Method()
+  async init(option) {
+    const exist = document.querySelector('hc-notify')
+    const notify = exist ? exist : document.createElement('hc-notify')
+    Object.keys(option).forEach(key => {
+      notify.setAttribute(key, option[key])
+    })
+    notify.setAttribute('service', 'true')
+    document.body.appendChild(notify)
+    notify.showNotify()
+    return notify
+  }
 
 }

@@ -13,4 +13,8 @@ export declare class Toast {
     watchHandler(newValue: boolean): void;
     componentDidLoad(): void;
     render(): any;
+    /**
+     * 已服务的形式调用
+     */
+    init(option: any): Promise<HTMLHcToastElement>;
 }
