@@ -271,6 +271,10 @@ export namespace Components {
     'duration': number;
     'icon': string;
     'iconsize': number;
+    /**
+    * 已服务的形式调用
+    */
+    'init': (option: any) => Promise<HTMLHcNotifyElement>;
     'position': string;
     /**
     * (optional) 初始化notify
@@ -498,6 +502,10 @@ export namespace Components {
     */
     'destoryToast': () => Promise<void>;
     'duration': number;
+    /**
+    * 已服务的形式调用
+    */
+    'init': (option: any) => Promise<HTMLHcToastElement>;
     'position': string;
     /**
     * (optional) 初始化toast
@@ -507,6 +515,7 @@ export namespace Components {
     'visible': boolean;
   }
   interface HcVideo {
+    'Play': () => Promise<void>;
     'autoplay': boolean;
     'controls': boolean;
     'current': number;
@@ -519,6 +528,7 @@ export namespace Components {
     'poster': string;
     'preload': string;
     'src': string;
+    'startplay': () => Promise<void>;
   }
 }
 

@@ -7,4 +7,4 @@
 - 适配性-（android 6+）
 
 [GitHub](https://github.com/swimly/mui)
-[Get Started](#)
+[Get Started](../src/examples)

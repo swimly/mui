@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Watch, Method } from '@stencil/core';
 import { CssClassMap } from '../../utils/interfaces';
 
 @Component({
@@ -59,7 +59,7 @@ export class Video {
     this.s_to_hs(60)
     if (this.autoplay) {
       this.$video.load()
-      this.bindPlay()
+      this.startplay()
     }
   }
   toggle () {
@@ -71,11 +71,15 @@ export class Video {
   ontimeupdate () {
     this.current = this.$video.currentTime;
   }
-  bindPlay () {
+  @Method()
+  async startplay () {
     this.play = !this.play
   }
+  @Method()
+  async Play () {
+    this.$video.play()
+  }
   onprogress () {
-    console.log(this.$video.buffered)
     this.loaded = Math.round((this.$video.buffered.end(0) / this.duration)*100)
   }
   onloadedmetadata () {
@@ -87,11 +91,15 @@ export class Video {
       var ctx = canvas.getContext('2d');
       ctx.drawImage(this.$video, 0, 0, canvas.width, canvas.height)
       this.poster = canvas.toDataURL('image/jpg')
-      console.log(this.poster)
     }
   }
   oncanplay () {
     this.duration = this.$video.duration
+    document.addEventListener('WeixinJSBridgeReady', () => {
+      if (this.autoplay) {
+        this.$video.play()
+      }
+    })
   }
   onloadeddata () {
     this.loaded = 100
@@ -168,9 +176,9 @@ export class Video {
           <div class="loaded" style={{width: `${this.loaded}%`}}></div>
           <div class="progress" style={{width: `${(this.current / this.duration) * 100}%`}}></div>
         </div>
-        <hc-icon id="large" name="play-fill" onClick={this.bindPlay.bind(this)} size={64} class={this.getClass1()}></hc-icon>
+        <hc-icon id="large" name="play-fill" onClick={this.startplay.bind(this)} size={64} class={this.getClass1()}></hc-icon>
         <div class={this.getClass()}>
-          <hc-icon size={32} id="play" onClick={this.bindPlay.bind(this)} name='play'></hc-icon>
+          <hc-icon size={32} id="play" onClick={this.startplay.bind(this)} name='play'></hc-icon>
           <div class="time">{this.s_to_hs(this.current)}</div>
           <div class="bar">
             <div class="loaded" style={{width: `${this.loaded}%`}}></div>
